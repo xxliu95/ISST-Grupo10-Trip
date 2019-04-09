@@ -14,11 +14,16 @@ import org.apache.shiro.subject.Subject;
 
 import es.upm.dit.isst.trip.dao.EmpleadoDAO;
 import es.upm.dit.isst.trip.dao.EmpleadoDAOImplementation;
+import es.upm.dit.isst.trip.model.Empleado;
 
 @WebServlet({ "/HomeServlet" })
 public class HomeServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		EmpleadoDAO edao =  EmpleadoDAOImplementation.getInstance();
+		String email = req.getParameter("email");
+		Empleado empleado = edao.read(email);
+		req.setAttribute("empleado", empleado);
 		getServletContext().getRequestDispatcher( "/Home.jsp" ).forward( req, resp );
 	}
 

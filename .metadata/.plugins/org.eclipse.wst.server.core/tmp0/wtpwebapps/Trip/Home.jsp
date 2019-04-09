@@ -97,64 +97,68 @@
         </div>
         <div class="col-auto details">
             <blockquote>
-                <h5>Jesús Rodríguez Ovejero</h5>
+                <h5>${empleado.name}</h5>
                 <small><cite title="Source Title">Empleado  <i class="icon-map-marker"></i></cite></small>
             </blockquote>
             <p>
-                foo@gmail.com <br>
-                ID Empleado: XXXQ <br>
-                22 Octubre, 1997
+                ${empleado.email} <br>
+                ID Empleado: ${empleado.id} <br>
+            
             </p>
         </div>
     </div>
 
 
-    <!-- Solicitar viaje  -->
-    <div class="solicitar" style="margin-top: 1%">
-        <div class="row border">
-            <div class="col-md-10 col-md-offset-1">
-                <div class="panel panel-default panel-table">
-                    <div class="panel-heading">
-                        <div class="row">
-                            <div class="col col-auto">
-                                <h3 class="panel-title">Solicitar un viaje</h3>
-                            </div>
-                            <div class="col col-auto text-right">
-                                <button type="button" class="btn btn-sm btn-primary btn-create" style="margin-top: 8%"> Solicitar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+			<!-- Solicitar viaje  -->
+			<div class="solicitar" style="margin-top: 1%">
+				<div class="row border">
+					<div class="col-md-10 col-md-offset-1">
+						<div class="panel panel-default panel-table">
+							<div class="panel-heading">
+								<div class="row">
+									<div class="col col-auto">
+										<h3 class="panel-title">Solicitar un viaje</h3>
+									</div>
+									<div class="col col-auto text-right">
+										<form action="SolicitartViajeServlet" method="get">									
+											<button type="submit"
+												class="btn btn-sm btn-primary btn-create"
+												style="margin-top: 8%">Solicitar</button>
+										</form>
+									</div>
+								</div>
+							</div>
+						</div>
 
 
 
-                <!-- List table -->
+						<!-- List table -->
 
-                <div class="panel-body">
-                    <table class="table table-striped table-bordered table-list">
-                        <thead>
-                            <tr>
-                                <th class="hidden-xs">ID</th>
-                                <th>Viaje</th>
-                                <th>Información </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="hidden-xs">1</td>
-                                <td>Los Ángeles </td>
-                                <td>Fecha de salida:  31/06/2019<br>
-                                    Fecha de regreso: 31/06/2019<br>
-                                    Objeto del viaje: Postureo y tomar solecito <br>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- pagination -->
+						<div class="panel-body">
+							<table class="table table-striped table-bordered table-list">
+								<thead>
+									<tr>
+										<th class="hidden-xs">ID</th>
+										<th>Viaje</th>
+										<th>Información</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td class="hidden-xs">1</td>
+										<td>Los Ángeles</td>
+										<td>Fecha de salida: 31/06/2019<br> Fecha de
+											regreso: 31/06/2019<br> Objeto del viaje: Postureo y
+											tomar solecito <br>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- pagination -->
     <nav aria-label="Page navigation example">
         <ul class="pagination ">
             <li class="page-item">

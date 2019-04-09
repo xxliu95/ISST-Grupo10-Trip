@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class Viaje implements Serializable{
 	
 	@Id
-	private String nViaje;
+	private int nViaje;
 	
 	private String descripcion;
 	private int status;
@@ -27,11 +27,11 @@ public class Viaje implements Serializable{
 	
 	public Viaje() {}
 
-	public String getnViaje() {
+	public int getnViaje() {
 		return nViaje;
 	}
 
-	public void setnViaje(String nViaje) {
+	public void setnViaje(int nViaje) {
 		this.nViaje = nViaje;
 	}
 
