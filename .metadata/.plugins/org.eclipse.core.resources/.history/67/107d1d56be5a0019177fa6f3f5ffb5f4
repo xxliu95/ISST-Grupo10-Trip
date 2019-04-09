@@ -11,12 +11,11 @@ public class Viaje implements Serializable{
 	@Id
 	private String nViaje;
 	
-	private String descripcion;
+	private String description;
 	private int status;
 	//private Date fechaComienzo; que clase date usar
 	private int duracion; //en d¨ªas
 	private double presupuesto;
-
 	/*
 	 * @OneToMany(mappedBy = "viaje", fetch = FetchType.EAGER) private
 	 * Collection<Factura> facturas;
@@ -35,12 +34,12 @@ public class Viaje implements Serializable{
 		this.nViaje = nViaje;
 	}
 
-	public String getDescripcion() {
-		return descripcion;
+	public String getDescription() {
+		return description;
 	}
 
 	public void setDescripcion(String descripcion) {
-		this.descripcion = descripcion;
+		this.description = description;
 	}
 
 	public int getStatus() {

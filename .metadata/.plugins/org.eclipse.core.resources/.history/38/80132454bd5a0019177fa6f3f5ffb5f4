@@ -12,8 +12,8 @@ securityManager.sessionManager = $sessionManager
 iniRealm.credentialsMatcher = $sha256Matcher
 jdbcRealm = org.apache.shiro.realm.jdbc.JdbcRealm
 jdbcRealm.permissionsLookupEnabled = false
-jdbcRealm.authenticationQuery = SELECT password FROM (SELECT email, password, 'empleado' as role FROM empleado UNION SELECT email, password, 'empleado' as role FROM empleado) WHERE email = ?
-jdbcRealm.userRolesQuery = SELECT role FROM (SELECT email, password, 'empleado' as role FROM empleado UNION SELECT email, password, 'empleado' as role FROM empleado) WHERE email = ?
+jdbcRealm.authenticationQuery = SELECT password FROM (SELECT email, password, 'viaje' as role FROM viaje UNION SELECT email, password, 'empleado' as role FROM empleado) WHERE email = ?
+jdbcRealm.userRolesQuery = SELECT role FROM (SELECT email, password, 'viaje' as role FROM viaje UNION SELECT email, password, 'empleado' as role FROM empleado) WHERE email = ?
 jdbcRealm.credentialsMatcher = $sha256Matcher
 
 ds = org.h2.jdbcx.JdbcDataSource

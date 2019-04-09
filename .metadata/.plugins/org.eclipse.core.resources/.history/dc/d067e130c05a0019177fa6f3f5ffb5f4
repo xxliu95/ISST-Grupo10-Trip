@@ -17,10 +17,8 @@ public class Viaje implements Serializable{
 	private int duracion; //en d¨ªas
 	private double presupuesto;
 
-	/*
-	 * @OneToMany(mappedBy = "viaje", fetch = FetchType.EAGER) private
-	 * Collection<Factura> facturas;
-	 */
+	@OneToMany(mappedBy = "viaje", fetch = FetchType.EAGER)
+	private Collection<Factura> facturas;
 	
 	@ManyToOne
 	private Empleado viajero;

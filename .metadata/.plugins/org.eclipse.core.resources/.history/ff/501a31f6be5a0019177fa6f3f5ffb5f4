@@ -17,11 +17,13 @@ public class Empleado {
 	@OneToMany(mappedBy = "viajero", fetch = FetchType.EAGER)
 	private Collection<Viaje> viajes;
 	
+	
 	@OneToMany(mappedBy = "superior", fetch = FetchType.EAGER) 
 	private Collection<Empleado> subordinados;
 	
 	@ManyToOne
 	private Empleado superior;
+	
 	
 	public Empleado() {}
 
