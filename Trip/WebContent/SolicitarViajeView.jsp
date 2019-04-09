@@ -61,7 +61,7 @@
 					</div>
 				</div>
 				<div class="form-row">
-					<div class="col-sm-4">
+					<div class="col-sm-12">
 						<label for="exampleFormControlInput1">Nombre</label> <input
 							type="text" class="form-control" placeholder="Nombre">
 					</div>

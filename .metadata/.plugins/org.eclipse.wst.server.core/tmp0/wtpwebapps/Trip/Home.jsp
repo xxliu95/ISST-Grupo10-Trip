@@ -120,7 +120,7 @@
 										<h3 class="panel-title">Solicitar un viaje</h3>
 									</div>
 									<div class="col col-auto text-right">
-										<form action="SolicitartViajeServlet" method="get">									
+										<form action="SolicitarViajeServlet" method="get">									
 											<button type="submit"
 												class="btn btn-sm btn-primary btn-create"
 												style="margin-top: 8%">Solicitar</button>
