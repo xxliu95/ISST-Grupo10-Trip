@@ -21,26 +21,4 @@ public class RegisterServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		getServletContext().getRequestDispatcher( "/RegisterView.jsp" ).forward( req, resp );
 	}
-	
-	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String id = req.getParameter( "id" );
-		String pass = req.getParameter( "password" );
-		Subject currentUser = SecurityUtils.getSubject();
-		if ( !currentUser.isAuthenticated() ) {
-			UsernamePasswordToken token = new UsernamePasswordToken( id, pass );
-			try {
-				currentUser.login( token );
-				if ( currentUser.hasRole( "admin" ) )
-					resp.sendRedirect( req.getContextPath() + "/AdminServlet" );
-				else if ( currentUser.hasRole( "professor" ) )
-					resp.sendRedirect( req.getContextPath() + "/ProfessorServlet?email=" + currentUser.getPrincipal() );
-				else
-					resp.sendRedirect( req.getContextPath() + "/TFGServlet?email=" + currentUser.getPrincipal() );
-			} catch ( Exception e ) {
-				resp.sendRedirect( req.getContextPath() + "/LoginServlet" );
-			}
-		} else
-			resp.sendRedirect( req.getContextPath() + "/LoginServlet" );
-	}
 }
