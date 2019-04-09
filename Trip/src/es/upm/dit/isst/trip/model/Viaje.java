@@ -1,6 +1,7 @@
 package es.upm.dit.isst.trip.model;
 
 import java.io.Serializable;
+import java.util.Collection;
 
 import javax.persistence.*;
 
@@ -15,12 +16,13 @@ public class Viaje implements Serializable{
 	//private Date fechaComienzo; que clase date usar
 	private int duracion; //en d¨ªas
 	private double presupuesto;
-
-	@OneToMany(mappedBy = "viaje", fetch = FetchType.EAGER)
-	private Factura factura;
+	/*
+	 * @OneToMany(mappedBy = "viaje", fetch = FetchType.EAGER) private
+	 * Collection<Factura> facturas;
+	 */
 	
 	@ManyToOne
-	private Empleado empleado;
+	private Empleado viajero;
 	
 	public Viaje() {}
 
@@ -64,20 +66,13 @@ public class Viaje implements Serializable{
 		this.presupuesto = presupuesto;
 	}
 
-	public Factura getFactura() {
-		return factura;
-	}
-
-	public void setFactura(Factura factura) {
-		this.factura = factura;
-	}
 
 	public Empleado getEmpleado() {
-		return empleado;
+		return viajero;
 	}
 
 	public void setEmpleado(Empleado empleado) {
-		this.empleado = empleado;
+		this.viajero = empleado;
 	}
 }
 

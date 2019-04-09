@@ -30,9 +30,9 @@ public class CreateEmpleadoServlet extends HttpServlet {
 
 		empleado.setPassword( new Sha256Hash( password ).toString() );
 		
-		EmpleadoDAO pdao = EmpleadoDAOImplementation.getInstance();
-		pdao.create( empleado );
+		EmpleadoDAO edao = EmpleadoDAOImplementation.getInstance();
+		edao.create( empleado );
 		
-		resp.sendRedirect( req.getContextPath() + "/AdminServlet" );
+		resp.sendRedirect( req.getContextPath() + "/LoginServlet" );
 	}
 }

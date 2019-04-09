@@ -15,9 +15,9 @@ public class Factura {
 
 	@Lob
 	private byte[] pdf;
-	
-	@ManyToOne
-	private Viaje viaje;
+	/*
+	 * @ManyToOne private Viaje viaje;
+	 */
 	
 	public Factura() {}
 

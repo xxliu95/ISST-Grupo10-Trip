@@ -14,19 +14,6 @@
 
 <title>Trip</title>
 
-
-<link rel="stylesheet" href="css/bootstrap.min.css">   	        <script src="js/bootstrap.min.js"></script>   
-<!-- Bootstrap core JavaScript -->
-<script src="vendor/jquery/jquery.min.js"></script>
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-<!-- Bootstrap core CSS -->
-<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-<!-- Custom fonts for this template -->
-<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-<link href="vendor/simple-line-icons/css/simple-line-icons.css"
-	rel="stylesheet" type="text/css">
 <link
 	href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic"
 	rel="stylesheet" type="text/css">
@@ -35,7 +22,6 @@
 <link href="css/login.min.css" rel="stylesheet">
 <link href="css/login.css" rel="stylesheet">
 
-<title>Login View</title>
 </head>
 <body>
 	<shiro:guest>
@@ -54,18 +40,20 @@
 				<div class="login-form">
 					<form action="LoginServlet" method="post">
 						<div class="form-group">
-							<input name="id" type="text" class="form-control" placeholder="ID o Email">
+							<input name="email" type="text" class="form-control" placeholder="Email">
 						</div>
 						<div class="form-group">
 							<input name="password" type="password" class="form-control"
 								placeholder="Contraseña">
 						</div>
-						<a type="submit" class="col-12 btn btn-black" href="home.html">LOGIN</a>
 
-						<!--<button type="submit" class="col-12 btn btn-black">LOGIN</button>-->
-						<span class="col-12"></span> <a class="col-12 btn"
-							href="RegisterView.jsp">Registrar</a>
+						<button type="submit" class="col-12 btn btn-black">LOGIN</button>
+						<span class="col-12"></span> 
 					</form>
+					<form action="RegisterServlet" method="get">
+						<button type="submit" class="col-12 btn">Registrar</button>
+					</form>
+					
 				</div>
 			</div>
 		</div>

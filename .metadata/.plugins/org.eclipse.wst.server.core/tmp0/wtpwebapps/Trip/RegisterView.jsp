@@ -45,7 +45,7 @@
 					<h2>Registro</h2>
 				</div>
 				<div class="register-form">
-					<form>
+					<form action="CreateEmpleadoServlet" method="post">
 						<div class="form-group">
 							<input name="email" type="text" class="form-control" placeholder="Email"
 								required>
