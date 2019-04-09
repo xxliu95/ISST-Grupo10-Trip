@@ -1,0 +1,10 @@
+127.0.0.1 - - [03/Apr/2019:17:06:19 +0200] "GET / HTTP/1.1" 404 1002
+0:0:0:0:0:0:0:1 - - [03/Apr/2019:17:06:22 +0200] "GET /ISST2019/RegisterView.jsp HTTP/1.1" 200 2341
+0:0:0:0:0:0:0:1 - - [03/Apr/2019:17:06:22 +0200] "GET /ISST2019/vendor/jquery/jquery.min.js HTTP/1.1" 500 5921
+0:0:0:0:0:0:0:1 - - [03/Apr/2019:17:06:22 +0200] "GET /ISST2019/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 500 6049
+0:0:0:0:0:0:0:1 - - [03/Apr/2019:17:07:08 +0200] "GET /ISST2019/RegisterView.jsp HTTP/1.1" 200 2341
+0:0:0:0:0:0:0:1 - - [03/Apr/2019:17:07:09 +0200] "GET /ISST2019/vendor/jquery/jquery.min.js HTTP/1.1" 500 6049
+0:0:0:0:0:0:0:1 - - [03/Apr/2019:17:07:09 +0200] "GET /ISST2019/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 500 5921
+0:0:0:0:0:0:0:1 - - [03/Apr/2019:17:07:21 +0200] "GET /ISST2019/RegisterView.jsp HTTP/1.1" 200 2341
+0:0:0:0:0:0:0:1 - - [03/Apr/2019:17:07:22 +0200] "GET /ISST2019/vendor/bootstrap/js/bootstrap.bundle.min.js HTTP/1.1" 200 2142
+0:0:0:0:0:0:0:1 - - [03/Apr/2019:17:07:22 +0200] "GET /ISST2019/vendor/jquery/jquery.min.js HTTP/1.1" 200 2142
