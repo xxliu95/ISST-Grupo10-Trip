@@ -62,7 +62,19 @@
 							<input name="id" type="text" class="form-control"
 								placeholder="ID empleado" required>
 						</div>
-						<button type="submit" class="col-12 btn btn-black">ENVIAR</button>
+						<div class="form-group">
+							<select  class="browser-default custom-select" name="superior">
+			  					<option value="" disabled selected>Responsable</option>
+  									<c:forEach items="${responsable_list}" var="responsablei">
+    									<option value="${ responsablei.email}">
+      										${responsablei.name}-${responsable.email}
+    								</option>
+  							</c:forEach>
+						</select>
+						</div>
+						<div class="form-group">
+							<button type="submit" class="col-12 btn btn-black">ENVIAR</button>
+						</div>
 
 					</form>
 				</div>

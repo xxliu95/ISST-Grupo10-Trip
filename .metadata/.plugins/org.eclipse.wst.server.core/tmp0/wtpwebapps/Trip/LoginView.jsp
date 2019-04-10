@@ -31,7 +31,6 @@
 
 </head>
 <body>
-	<shiro:guest>
 
 		<div class="sidenav">
 			<div class="title-text">
@@ -64,13 +63,6 @@
 				</div>
 			</div>
 		</div>
-
-	</shiro:guest>
-
-	<shiro:user>
-
-	</shiro:user>
-
 
 </body>
 </html>

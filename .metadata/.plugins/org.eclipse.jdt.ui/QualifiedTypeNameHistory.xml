@@ -8,5 +8,8 @@
 <fullyQualifiedTypeName name="es.upm.dit.isst.webLab.model.Professor"/>
 <fullyQualifiedTypeName name="es.upm.dit.isst.webLab.dao.ProfessorDAO"/>
 <fullyQualifiedTypeName name="es.upm.dit.isst.webLab.dao.ProfessorDAOImplementation"/>
+<fullyQualifiedTypeName name="es.upm.dit.isst.trip.dao.EmpleadoDAOImplementation"/>
+<fullyQualifiedTypeName name="es.upm.dit.isst.trip.dao.EmpleadoDAO"/>
+<fullyQualifiedTypeName name="es.upm.dit.isst.trip.model.Empleado"/>
 <fullyQualifiedTypeName name="java.util.Collection"/>
 </qualifiedTypeNameHistroy>

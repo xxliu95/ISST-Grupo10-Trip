@@ -32,9 +32,9 @@ public class LoginServlet extends HttpServlet {
 			try {
 				currentUser.login( token );
 				if ( currentUser.hasRole( "admin" ) )
-					resp.sendRedirect( req.getContextPath() + "/AdminServlet" );
+					resp.sendRedirect( req.getContextPath() + "/HomeEncargadoServlet" );
 				else if ( currentUser.hasRole( "employer" ) )
-					resp.sendRedirect( req.getContextPath() + "/HomeServlet?email=" + currentUser.getPrincipal() );
+					resp.sendRedirect( req.getContextPath() + "/HomeEncargadoServlet?email=" + currentUser.getPrincipal() );
 				else
 					resp.sendRedirect( req.getContextPath() + "/HomeServlet?email=" + currentUser.getPrincipal() );
 			} catch ( Exception e ) {

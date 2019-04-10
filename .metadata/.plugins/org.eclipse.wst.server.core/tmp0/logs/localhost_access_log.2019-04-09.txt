@@ -594,3 +594,6 @@
 0:0:0:0:0:0:0:1 - - [09/Apr/2019:18:53:00 +0200] "GET /ISST2019/SolicitarViajeServlet HTTP/1.1" 200 13590
 0:0:0:0:0:0:0:1 - - [09/Apr/2019:18:53:01 +0200] "GET /ISST2019/vendor/fontawesome-free/css/all.min.css HTTP/1.1" 200 7166
 0:0:0:0:0:0:0:1 - - [09/Apr/2019:18:53:01 +0200] "GET /ISST2019/vendor/simple-line-icons/css/simple-line-icons.css HTTP/1.1" 200 7166
+0:0:0:0:0:0:0:1 - - [09/Apr/2019:19:04:19 +0200] "GET /ISST2019/HomeServlet?email=a HTTP/1.1" 200 10956
+0:0:0:0:0:0:0:1 - - [09/Apr/2019:19:04:20 +0200] "GET /ISST2019/img/fotocarnet.jpg HTTP/1.1" 200 7166
+127.0.0.1 - - [09/Apr/2019:19:04:43 +0200] "GET / HTTP/1.1" 404 1002

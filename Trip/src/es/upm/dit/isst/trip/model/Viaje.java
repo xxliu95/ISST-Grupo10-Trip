@@ -75,5 +75,13 @@ public class Viaje implements Serializable{
 	public void setEmpleado(Empleado empleado) {
 		this.viajero = empleado;
 	}
+
+	public Empleado getViajero() {
+		return viajero;
+	}
+
+	public void setViajero(Empleado viajero) {
+		this.viajero = viajero;
+	}
 }
 

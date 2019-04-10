@@ -22,15 +22,20 @@ public class CreateEmpleadoServlet extends HttpServlet {
 		String password = req.getParameter( "password" );
 		String email = req.getParameter( "email" );
 		String id =req.getParameter( "id" );
+		String superior = req.getParameter( "superior" );
+		
+		EmpleadoDAO edao = EmpleadoDAOImplementation.getInstance();
+		Empleado sup = edao.read( superior );
 		
 		Empleado empleado = new Empleado();
 		empleado.setName( name );
 		empleado.setEmail( email );
 		empleado.setId( id );
+		empleado.setSuperior( sup );
+		empleado.setResponsable( false );
 
 		empleado.setPassword( new Sha256Hash( password ).toString() );
 		
-		EmpleadoDAO edao = EmpleadoDAOImplementation.getInstance();
 		edao.create( empleado );
 		
 		resp.sendRedirect( req.getContextPath() + "/LoginServlet" );

@@ -13,6 +13,7 @@ public class Empleado {
 	private String id;
 	private String password;
 	private String name;
+	private boolean responsable;
 	
 	@OneToMany(mappedBy = "viajero", fetch = FetchType.EAGER)
 	private Collection<Viaje> viajes;
@@ -26,7 +27,6 @@ public class Empleado {
 	public Empleado() {}
 
 	//getters y setters
-
 
 	public String getEmail() {
 		return email;
@@ -97,9 +97,11 @@ public class Empleado {
 		this.superior = superior;
 	}
 
+	public boolean isResponsable() {
+		return responsable;
+	}
 
-
-
-
-
+	public void setResponsable(boolean responsable) {
+		this.responsable = responsable;
+	}
 }
