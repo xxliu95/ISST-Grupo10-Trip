@@ -9,23 +9,46 @@ import javax.persistence.*;
 public class Viaje implements Serializable{
 	
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int nViaje;
-	
-	private String descripcion;
-	private int status;
-	//private Date fechaComienzo; que clase date usar
-	private int duracion; //en d¨ªas
-	private double presupuesto;
 
-	/*
-	 * @OneToMany(mappedBy = "viaje", fetch = FetchType.EAGER) private
-	 * Collection<Factura> facturas;
-	 */
-	
+	private double presupuesto;
 	@ManyToOne
 	private Empleado viajero;
+	@Temporal(TemporalType.DATE)
+	private java.util.Date finicio;
+	@Temporal(TemporalType.DATE)
+	private java.util.Date ffin;
+
+	private String descripcion;
+	private int status;
 	
 	public Viaje() {}
+	
+	public Empleado getViajero() {
+		return viajero;
+	}
+
+	public java.util.Date getFinicio() {
+		return finicio;
+	}
+
+	public void setFinicio(java.util.Date finicio) {
+		this.finicio = finicio;
+	}
+
+	public java.util.Date getFfin() {
+		return ffin;
+	}
+
+	public void setFfin(java.util.Date ffin) {
+		this.ffin = ffin;
+	}
+
+	public void setViajero(Empleado viajero) {
+		this.viajero = viajero;
+	}
+
 
 	public int getnViaje() {
 		return nViaje;
@@ -51,14 +74,6 @@ public class Viaje implements Serializable{
 		this.status = status;
 	}
 
-	public int getDuracion() {
-		return duracion;
-	}
-
-	public void setDuracion(int duracion) {
-		this.duracion = duracion;
-	}
-
 	public double getPresupuesto() {
 		return presupuesto;
 	}
@@ -74,14 +89,6 @@ public class Viaje implements Serializable{
 
 	public void setEmpleado(Empleado empleado) {
 		this.viajero = empleado;
-	}
-
-	public Empleado getViajero() {
-		return viajero;
-	}
-
-	public void setViajero(Empleado viajero) {
-		this.viajero = viajero;
 	}
 }
 

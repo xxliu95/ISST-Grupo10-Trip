@@ -48,22 +48,23 @@
 			</div>
 		</nav>
 		<div class="requestForm">
-			<form>
+			<form action="CrearViajeServlet" method="post">
 				<div>
 					<h1>Datos del solicitante</h1>
 				</div>
 
 				<div class="form-row">
 					<div class="col-12">
-						<label for="exampleFormControlInput1">Email</label> <input
-							type="email" class="form-control" id="exampleFormControlInput1"
-							placeholder="name@example.com">
+						<label for="exampleFormControlInput1">Email</label> 
+						<input
+							type="email" class="form-control" name="email" id="exampleFormControlInput1"
+							placeholder="name@example.com"/>
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="col-sm-12">
 						<label for="exampleFormControlInput1">Nombre</label> <input
-							type="text" class="form-control" placeholder="Nombre">
+							type="text" class="form-control" placeholder="Nombre"/>
 					</div>
 				</div>
 
@@ -71,24 +72,24 @@
 				<div class="form-row">
 					<div class="col-sm-4">
 						<label for="exampleFormControlInput1">DNI/NIF</label> <input
-							type="text" class="form-control" placeholder="DNI/NIF">
+							type="text" class="form-control" placeholder="DNI/NIF"/>
 					</div>
 					<div class="col-sm-4">
 						<label for="exampleFormControlInput1">Cargo</label> <input
 							type="text" class="form-control"
-							placeholder="Puesto de trabajo dentro de la empresa">
+							placeholder="Puesto de trabajo dentro de la empresa"/>
 					</div>
 					<div class="col-sm-4">
 						<label for="exampleFormControlInput1">Telefono</label> <input
 							type="text" class="form-control"
-							placeholder="Telefono fijo o móvil  ">
+							placeholder="Telefono fijo o móvil  "/>
 					</div>
 				</div>
 
 				<div class="form-row">
 					<div class="col-sm-12">
 						<label for="exampleFormControlInput1">IBAN</label> <input
-							type="text" class="form-control IBAN" placeholder="IBAN">
+							type="text" class="form-control IBAN" placeholder="IBAN"/>
 					</div>
 				</div>
 
@@ -100,19 +101,13 @@
 					<div class="col-sm-4">
 						<label for="exampleFormControlSelect1">Tipo de viaje</label> <select
 							class="form-control" id="exampleFormControlSelect1">
-							<option>1</option>
-							<option>2</option>
-							<option>3</option>
-							<option>4</option>
+							<option>Conferencia</option>
+							<option>Proyecto</option>
+							<option>Formativo</option>
 						</select>
 
 					</div>
-					<div class="col-sm-8">
-						<label for="exampleFormControlTextarea1">Objeto del viaje</label>
-						<textarea class="form-control" id="exampleFormControlTextarea1"
-							rows="3">
-                </textarea>
-					</div>
+			
 				</div>
 
 				<div class="form-row">
@@ -147,14 +142,14 @@
 						<label for="exampleFormControlInput1">Datos vehículo
 							personal</label>
 						<p>
-							<input type="text" class="form-control" placeholder="Matrícula">
+							<input type="text" class="form-control" placeholder="Matrícula"/>
 						</p>
 						<p>
 							<input type="text" class="form-control"
-								placeholder="Marca y modelo">
+								placeholder="Marca y modelo"/>
 						</p>
 						<p>
-							<input type="text" class="form-control" placeholder="Titular">
+							<input type="text" class="form-control" placeholder="Titular"/>
 						</p>
 					</div>
 				</div>
@@ -162,15 +157,15 @@
 				<div class="form-row">
 					<div class="col-sm-6">
 						<div class="form-group">
-							<label>Periodo inicio</label> <input type="date" name="bday"
-								max="3000-12-31" min="1000-01-01" class="form-control">
+							<label>Periodo inicio</label> <input type="date" name="finicio"
+								max="3000-12-31" min="1000-01-01" class="form-control"/>
 						</div>
 					</div>
 
 					<div class="col-sm-6">
 						<div class="form-group">
-							<label>Periodo fin</label> <input type="date" name="bday"
-								min="1000-01-01" max="3000-12-31" class="form-control">
+							<label>Periodo fin</label> <input type="date" name="ffin"
+								min="1000-01-01" max="3000-12-31" class="form-control"/>
 
 						</div>
 					</div>
@@ -179,7 +174,7 @@
 				<div class="form-row">
 					<div class="col-sm-12">
 						<label for="exampleFormControlTextarea1">Objeto del viaje</label>
-						<textarea class="form-control" id="exampleFormControlTextarea1"
+						<textarea class="form-control" name="descripcion" id="exampleFormControlTextarea1"
 							rows="3">
                 </textarea>
 					</div>
@@ -200,11 +195,10 @@
 
 				<div class="form-row">
 					<div class="col-sm-4">
-						<label for="inputEmail3" class="col-form-label">Gastos
-							previstos</label>
+						<label for="inputEmail3" class="col-form-label">Gastos previstos</label>
 					</div>
 					<div class="col-sm-8">
-						<input type="number" value="1000" min="0" step="0.01"
+						<input type="number" name="presupuesto" value="1000" min="0" step="0.01"
 							data-number-to-fixed="2" data-number-stepfactor="100"
 							class="form-control currency" id="c2" />
 					</div>
@@ -217,12 +211,16 @@
 
 				<div class="form-row">
 					<span class="col-6"></span>
+				<a type="button" class="col-3 btn" href="Home.jsp">Cancelar</a>
 
-					<button type="button" class="col-3 btn" href="registrar.html">Cancelar</button>
-					<button type="button" class="col-3 btn btn-aceptar"
-						href="registrar.html">Guardar cambios</button>
+					
+					<button type="submit" class="col-3 btn btn-aceptar"
+						>Guardar cambios</button>
 				</div>
+				
 			</form>
+			
+			
 		</div>
 
 </body>
