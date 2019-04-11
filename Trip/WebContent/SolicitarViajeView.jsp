@@ -42,7 +42,7 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarResponsive">
 					<ul class="navbar-nav ml-auto">
-						<li class="nav-item"><a class="nav-link" href="#">Cerrar sesión</a></li>
+						<li class="nav-item"><a class="nav-link" href="LogoutServlet">Cerrar sesión</a></li>
 					</ul>
 				</div>
 			</div>
@@ -170,12 +170,24 @@
 						</div>
 					</div>
 				</div>
+				
+				<div class="form-row">
+					<div class="col-sm-6">
+						<div class="form-group">
+							<label>Destino</label> <input type="text" name="destino"
+								 class="form-control"/>
+						</div>
+					</div>
 
+	
+				</div>
 				<div class="form-row">
 					<div class="col-sm-12">
 						<label for="exampleFormControlTextarea1">Objeto del viaje</label>
 						<textarea class="form-control" name="descripcion" id="exampleFormControlTextarea1"
 							rows="3">
+							
+				
                 </textarea>
 					</div>
 				</div>
@@ -211,7 +223,7 @@
 
 				<div class="form-row">
 					<span class="col-6"></span>
-				<a type="button" class="col-3 btn" href="Home.jsp">Cancelar</a>
+				<a type="button" class="col-3 btn" href="HomeServlet">Cancelar</a>
 
 					
 					<button type="submit" class="col-3 btn btn-aceptar"

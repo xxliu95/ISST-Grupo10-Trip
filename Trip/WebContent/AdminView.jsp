@@ -61,7 +61,7 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarResponsive">
 					<ul class="navbar-nav ml-auto">
-						<li class="nav-item"><a class="nav-link" href="#">Cerrar
+						<li class="nav-item"><a class="nav-link" href="LogoutServlet">Cerrar
 								sesión</a></li>
 					</ul>
 				</div>

@@ -11,7 +11,10 @@ public class Viaje implements Serializable{
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
 	private int nViaje;
+	
+	private String destino;
 
+	
 	private double presupuesto;
 	@ManyToOne
 	private Empleado viajero;
@@ -90,5 +93,14 @@ public class Viaje implements Serializable{
 	public void setEmpleado(Empleado empleado) {
 		this.viajero = empleado;
 	}
+	
+	public String getDestino() {
+		return destino;
+	}
+
+	public void setDestino(String destino) {
+		this.destino = destino;
+	}
+
 }
 

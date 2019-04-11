@@ -43,6 +43,7 @@ public class CrearViajeServlet extends HttpServlet{
 		}
 		double presupuesto = Double.parseDouble(req.getParameter( "presupuesto" ));
 		String email = req.getParameter( "email" );
+		String destino = req.getParameter("destino");
 		
 		ViajeDAO vdao = ViajeDAOImplementation.getInstance();
 		
@@ -59,9 +60,10 @@ public class CrearViajeServlet extends HttpServlet{
 		viaje.setPresupuesto( presupuesto );
 		viaje.setEmpleado(empleado);
 		viaje.setnViaje(1);
+		viaje.setDestino(destino);
 		
 		vdao.create( viaje );
 		
-		resp.sendRedirect( req.getContextPath() + "/HomeServlet" );
+		resp.sendRedirect( req.getContextPath() + "/HomeServlet?email=" + viaje.getViajero().getEmail() );
 	}
 }

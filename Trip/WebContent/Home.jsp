@@ -87,7 +87,7 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Cerrar sesión</a>
+                    <a class="nav-link" href="LogoutServlet">Cerrar sesión</a>
                 </li>
             </ul>
         </div>
@@ -148,16 +148,19 @@
 										<th>Información</th>
 									</tr>
 								</thead>
+								<c:forEach items="${empleado.viajes}" var="viajei">
 								<tbody>
 									<tr>
-										<td class="hidden-xs">1</td>
-										<td>Los Ángeles</td>
-										<td>Fecha de salida: 31/06/2019<br> Fecha de
-											regreso: 31/06/2019<br> Objeto del viaje: Postureo y
-											tomar solecito <br>
+										<td class="hidden-xs">${viajei.nViaje}</td>
+										<td>${viajei.destino } </td>
+										<td>Fecha inicio: ${viajei.finicio }
+										<br>Fecha fin:  ${viajei.ffin }
+										<br>Descripción: ${viajei.descripcion }
+										<br>
 										</td>
 									</tr>
 								</tbody>
+								</c:forEach>
 							</table>
 						</div>
 					</div>

@@ -14,7 +14,10 @@ import org.apache.shiro.subject.Subject;
 
 import es.upm.dit.isst.trip.dao.EmpleadoDAO;
 import es.upm.dit.isst.trip.dao.EmpleadoDAOImplementation;
+import es.upm.dit.isst.trip.dao.ViajeDAO;
+import es.upm.dit.isst.trip.dao.ViajeDAOImplementation;
 import es.upm.dit.isst.trip.model.Empleado;
+
 
 @WebServlet({ "/HomeServlet" })
 public class HomeServlet extends HttpServlet {
@@ -25,6 +28,9 @@ public class HomeServlet extends HttpServlet {
 		Empleado empleado = edao.read(email);
 		req.setAttribute("empleado", empleado);
 		getServletContext().getRequestDispatcher( "/Home.jsp" ).forward( req, resp );
+		
+	
+	
 	}
 
 }
