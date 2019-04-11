@@ -124,13 +124,10 @@
 									</tr>
 								</thead>
 								
-								<c:if test="${viajesResponsable != null}">
-								<c:forEach items="${subordinados}" var="subi">
-									<c:forEach items="${viajesResponsable}" var="viajei">
+									<c:forEach items="${viajesEmpleados}" var="viajei">
 								<tbody>
 									<tr>
-										<td class="hidden-xs">${viajei.nViaje}</td>
-										<td>${subi.name } </td>									
+										<td class="hidden-xs">${viajei.nViaje}</td>								
 										<td>Fecha inicio: ${viajei.finicio }
 										<br>Fecha fin:  ${viajei.ffin }
 										<br>Descripción: ${viajei.descripcion }
@@ -138,9 +135,7 @@
 										</td> 
 									</tr>
 								</tbody>
-									</c:forEach>
-								</c:forEach>
-								</c:if>
+									</c:forEach>				
 							</table>
 						</div>
 					</div>

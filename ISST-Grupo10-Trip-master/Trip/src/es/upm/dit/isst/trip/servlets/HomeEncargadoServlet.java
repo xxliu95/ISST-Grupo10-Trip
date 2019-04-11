@@ -1,7 +1,9 @@
 package es.upm.dit.isst.trip.servlets;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashSet;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -29,14 +31,39 @@ public class HomeEncargadoServlet extends HttpServlet {
 		Empleado responsable = edao.read(email);
 		Collection<Empleado> subordinados = responsable.getSubordinados();
 		req.setAttribute("subordinados", subordinados);
-		Collection<Viaje> viajes ;
+
 		ViajeDAO vdao = ViajeDAOImplementation.getInstance();
+		//Viaje viaje = vdao.read(responsable.getSubordinados());
+		Collection<Viaje> viaje = new ArrayList<Viaje>();
+		
 		//falla aqui
+		System.out.println(subordinados);
 		for (Empleado empleado : subordinados) {
-			viajes = vdao.read(empleado.getEmail());
+			for(Viaje viajeEmpleado: empleado.getViajes()) {
+				System.out.println(vdao.read(viajeEmpleado.getnViaje()).getnViaje());
+				viaje.add(vdao.read(viajeEmpleado.getnViaje()));
+			}
 		}
-		req.setAttribute("viajesResponsable",);
+		
+		req.setAttribute("viajesEmpleados", viaje);
 		getServletContext().getRequestDispatcher( "/HomeEncargado.jsp" ).forward( req, resp );
 	}
+	
+		/*
+		
+		EmpleadoDAO edao =  EmpleadoDAOImplementation.getInstance();
+		String email = req.getParameter("email");
+		Empleado responsable = edao.read(email);
+		req.setAttribute("subordinados", responsable.getSubordinados());
+		Collection<Viaje> viaje = null;
+		for (Empleado empleado: responsable.getSubordinados()) {
+			ViajeDAO vdao =  ViajeDAOImplementation.getInstance();
+			for(Viaje viajes: empleado.getViajes() ) {
+				viaje.add(viajes);
+			}
+		}
+		req.setAttribute("viajesResponsable", viaje);
+		getServletContext().getRequestDispatcher( "/HomeEncargado.jsp" ).forward( req, resp );
+		*/
+	}
 
-}

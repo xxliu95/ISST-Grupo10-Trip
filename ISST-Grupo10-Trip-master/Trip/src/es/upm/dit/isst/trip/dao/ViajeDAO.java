@@ -8,7 +8,7 @@ public interface ViajeDAO {
 	
 	public void create(Viaje viaje);
 		
-	public Viaje read(String nViaje);
+	public Viaje read(int nViaje);
 
 	public void update(Viaje viaje);
 	
