@@ -153,7 +153,7 @@
 									${viajei.ffin } <br>Descripción: ${viajei.descripcion } <br>
 								</td>
 								<td><c:if test="${viajei.status == 1}">
-										<form action="Form2EncargadoServlet" method="post">
+										<form action="FormEncargadoServlet" method="post">
 											<input type="hidden" name="nViaje" value="${viajei.nViaje}" />
 											<button type="submit">Aceptar viaje</button>
 										</form>
@@ -164,6 +164,12 @@
 											<button type="submit">AceptarReintegro</button>
 										</form>
 									</c:if></td>
+								<td><c:if test="${viajei.status == 6}">
+									<form action="Form6ReembolsoServlet" method="post">
+										<input type="hidden" name="nViaje" value="${viajei.nViaje}" />
+										<button type="submit">Aceptar Reembolso</button>
+									</form>
+								</c:if></td>
 								</tr>
 						</tbody>
 					</c:forEach>

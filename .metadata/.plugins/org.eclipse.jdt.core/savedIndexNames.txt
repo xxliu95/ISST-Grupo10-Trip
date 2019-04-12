@@ -78,7 +78,6 @@ INDEX VERSION 1.131+D:\Dropbox\ISST\Trabajo\ISST-Grupo10-Trip\workspace\.metadat
 972666350.index
 3517127072.index
 3097935241.index
-268658986.index
 2953298812.index
 3993634877.index
 470339306.index

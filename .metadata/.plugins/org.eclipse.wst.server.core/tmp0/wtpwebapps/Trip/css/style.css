@@ -4,6 +4,7 @@ body {
     font-family: "Lato", sans-serif;
 }
 
+
 .datos {
     padding: 30px;
     background-color: #fefefe
@@ -50,7 +51,15 @@ body {
     color: #fff;
     width: auto;
 }
+#card{
+	padding-top:10px;
+	
+}
 
+.foto{
+	height:200px;	
+	width:auto;	
+}
 @media  (max-width: 500px) {
 	body{
 		font-size:12px;
@@ -94,5 +103,5 @@ form {
 }
 
 .contenedor{
-	padding: 3%;
+	padding-top: 40px;
 }

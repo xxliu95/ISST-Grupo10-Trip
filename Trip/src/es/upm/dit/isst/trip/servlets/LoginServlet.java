@@ -19,7 +19,17 @@ import es.upm.dit.isst.trip.dao.EmpleadoDAOImplementation;
 public class LoginServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		getServletContext().getRequestDispatcher( "/LoginView.jsp" ).forward( req, resp );
+		Subject currentUser = SecurityUtils.getSubject();
+		if ( !currentUser.isAuthenticated() ) {
+			getServletContext().getRequestDispatcher( "/LoginView.jsp" ).forward( req, resp );
+		} else {
+			if ( currentUser.hasRole( "admin" ) )
+				resp.sendRedirect( req.getContextPath() + "/AdminServlet" );
+			else if ( currentUser.hasRole( "employer" ) )
+				resp.sendRedirect( req.getContextPath() + "/HomeEncargadoServlet?email=" + currentUser.getPrincipal() );
+			else
+				resp.sendRedirect( req.getContextPath() + "/HomeServlet?email=" + currentUser.getPrincipal() );
+		}
 	}
 	
 	@Override

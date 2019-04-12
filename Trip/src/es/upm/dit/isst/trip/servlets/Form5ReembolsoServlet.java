@@ -12,17 +12,17 @@ import es.upm.dit.isst.trip.dao.ViajeDAOImplementation;
 import es.upm.dit.isst.trip.model.Viaje;
 
 /**
- * Servlet implementation class Form2EncargadoServlet
+ * Servlet implementation class ReintegroServlet
  */
-@WebServlet("/Form2EncargadoServlet")
-public class Form2EncargadoServlet extends HttpServlet {
+@WebServlet("/Form5ReembolsoServlet")
+public class Form5ReembolsoServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		//todo este rollo porque read es int y getParameter solo acepta String o null
 		String nViaje = req.getParameter("nViaje").toString();
 		ViajeDAO vdao = ViajeDAOImplementation.getInstance();
 		Viaje viaje = vdao.read(Integer.parseInt(nViaje));
-		viaje.setStatus(2);
+		viaje.setStatus(6);
 		vdao.update(viaje);
-		resp.sendRedirect( req.getContextPath() + "/HomeEncargadoServlet?email=" + viaje.getViajero().getSuperior().getEmail());
+		resp.sendRedirect( req.getContextPath() + "/HomeServlet?email=" + viaje.getViajero().getEmail());
 	}
+
 }

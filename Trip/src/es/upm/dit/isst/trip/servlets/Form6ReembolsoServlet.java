@@ -14,13 +14,15 @@ import es.upm.dit.isst.trip.model.Viaje;
 /**
  * Servlet implementation class ReintegroServlet
  */
-@WebServlet("/Form2ReintegroServlet")
-public class Form2ReintegroServlet extends HttpServlet {
+@WebServlet("/Form6ReembolsoServlet")
+public class Form6ReembolsoServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String nViaje = req.getParameter("nViaje").toString();
 		ViajeDAO vdao = ViajeDAOImplementation.getInstance();
 		Viaje viaje = vdao.read(Integer.parseInt(nViaje));
-		viaje.setStatus(3);
+		viaje.setStatus(7);
 		vdao.update(viaje);
-		resp.sendRedirect( req.getContextPath() + "ViajeServlet?nViaje" + viaje.getnViaje());	}
+		resp.sendRedirect( req.getContextPath() + "/HomeEncargadoServlet?email=" + viaje.getViajero().getSuperior().getEmail());
+	}
+
 }

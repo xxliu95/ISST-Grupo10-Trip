@@ -237,11 +237,21 @@
 			<span class="col-1"></span>
 			
 			<div class="col-3">
-				<form action="SolicitarViajeServlet" method="get">
+				<c:choose>
+				<c:when test="${viaje.status == 5}">
+					<form action="Form5ReembolsoServlet" method="post">
+					<input type="hidden" name="nViaje" value="${viaje.nViaje}" />
 					<button type="submit"
 					class="btn btn-sm btn-primary btn-create"
 					style="margin-top: 8%">Solicitar Reembolso</button>
 				</form>
+				</c:when>
+				<c:otherwise>
+					<button disabled
+					class="btn btn-sm btn-secondary btn-create"
+					style="margin-top: 8%">Solicitar Reembolso</button>
+				</c:otherwise>
+			</c:choose>
 			</div>
 		</div>
 	</div>
