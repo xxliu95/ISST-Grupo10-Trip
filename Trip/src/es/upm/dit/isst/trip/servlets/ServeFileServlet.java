@@ -23,8 +23,6 @@ public class ServeFileServlet extends HttpServlet {
 		Empleado empleado = edao.read(email); //cojo el email
 		resp.setContentLength(empleado.getFoto().length);
 		resp.getOutputStream().write(empleado.getFoto());
-		
-		
-		
+	
 	}
 }

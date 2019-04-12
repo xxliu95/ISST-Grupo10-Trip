@@ -4,24 +4,25 @@ import java.util.Collection;
 
 import org.hibernate.Session;
 
+import es.upm.dit.isst.trip.model.Factura;
 import es.upm.dit.isst.trip.model.Viaje;
 
-public class ViajeDAOImplementation implements ViajeDAO{
+public class FacturaDAOImplementation implements FacturaDAO{
 
-	private static ViajeDAOImplementation instancia = null;
-	private ViajeDAOImplementation() {}
-	public static ViajeDAOImplementation getInstance() {
+	private static FacturaDAOImplementation instancia = null;
+	private FacturaDAOImplementation() {}
+	public static FacturaDAOImplementation getInstance() {
 		if(instancia == null)
-			instancia = new ViajeDAOImplementation();
+			instancia = new FacturaDAOImplementation();
 		return instancia;
 	}
 	
 	@Override
-	public void create(Viaje viaje) {
+	public void create(Factura factura) {
 		Session session = SessionFactoryService.get().openSession();
 		try {
 			session.beginTransaction();
-			session.save(viaje);
+			session.save(factura);
 			session.getTransaction().commit();
 		} catch (Exception e) {
 			
@@ -32,27 +33,27 @@ public class ViajeDAOImplementation implements ViajeDAO{
 
 	@SuppressWarnings("finally")
 	@Override
-	public Viaje read(int nViaje) {
-		Viaje viaje = null;
+	public Factura read(int nViaje) {
+		Factura factura = null;
 		Session session = SessionFactoryService.get().openSession();
 		try {
 			session.beginTransaction(); 
-			viaje = session.load( Viaje.class, nViaje ); 
+			factura = session.load( Factura.class, nViaje ); 
 			session.getTransaction().commit();
 		} catch (Exception e) {
 			
 		} finally {
 			session.close();
-			return viaje;
+			return factura;
 		}
 	}
 
 	@Override
-	public void update(Viaje viaje) {
+	public void update(Factura factura) {
 		Session session = SessionFactoryService.get().openSession();
 		try {
 			session.beginTransaction(); 
-			session.saveOrUpdate( viaje ); 
+			session.saveOrUpdate( factura ); 
 			session.getTransaction().commit();
 		} catch (Exception e) {
 			
@@ -62,11 +63,11 @@ public class ViajeDAOImplementation implements ViajeDAO{
 	}
 
 	@Override
-	public void delete(Viaje viaje) {
+	public void delete(Factura factura) {
 		Session session = SessionFactoryService.get().openSession();
 		try {
 			session.beginTransaction(); 
-			session.delete( viaje ); 
+			session.delete( factura ); 
 			session.getTransaction().commit();
 		} catch (Exception e) {
 			
@@ -77,18 +78,18 @@ public class ViajeDAOImplementation implements ViajeDAO{
 
 	@SuppressWarnings({ "finally", "unchecked" })
 	@Override
-	public Collection<Viaje> readAll() {
+	public Collection<Factura> readAll() {
 		Session session = SessionFactoryService.get().openSession();
-		Collection<Viaje> viajes = null;
+		Collection<Factura> facturas = null;
 		try {
 			session.beginTransaction(); 
-			viajes = session.createQuery( "from Viaje" ).list(); 
+			facturas = session.createQuery( "from Factura" ).list(); 
 			session.getTransaction().commit();
 		} catch (Exception e) {
 			
 		} finally {
 			session.close();
-			return viajes;
+			return facturas;
 		}	
 	}
 

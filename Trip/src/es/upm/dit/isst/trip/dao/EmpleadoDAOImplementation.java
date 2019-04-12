@@ -50,17 +50,17 @@ public class EmpleadoDAOImplementation implements EmpleadoDAO{
 	@SuppressWarnings("finally")
 	@Override
 	public Empleado read(int id) {
-		Empleado professor = null;
+		Empleado empleado = null;
 		Session session = SessionFactoryService.get().openSession();
 		try {
 			session.beginTransaction(); 
-			professor = session.load( Empleado.class, id ); 
+			empleado = session.load( Empleado.class, id ); 
 			session.getTransaction().commit();
 		} catch (Exception e) {
 			
 		} finally {
 			session.close();
-			return professor;
+			return empleado;
 		}
 	}
 

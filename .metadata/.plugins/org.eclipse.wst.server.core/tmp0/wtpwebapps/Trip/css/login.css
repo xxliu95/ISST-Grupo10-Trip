@@ -1,5 +1,6 @@
 body {
     font-family: "Lato", sans-serif;
+    
 }
 
 .sidenav {
@@ -7,6 +8,7 @@ body {
     background-color: #000;
     background-image: url(../img/avion.jpg);
     background-position: center;
+    background-repeat: no-repeat;
     overflow-x: hidden;
     padding-top: 20px;
     z-index: 1;
@@ -21,13 +23,24 @@ body {
         background-size: 100% auto;
         padding-top: 5vh;
     }
-    .login-form{
-        margin-top: 40vh;
-    }
+
+
+	.login-main-text{
+   	 	color: #111;
+   		padding-top: 10vh;
+    	padding-bottom: 5vh;
+	}
 
     .register-form{
         margin-top: 30vh;
     }
+    .main{
+    	margin-left:10%;
+    }
+    .title-text{
+    color: #fefefe;
+    padding: 13vh;
+}
 }
 
 @media (min-width: 768px){
@@ -39,9 +52,21 @@ body {
         position: fixed;
 
     }
+    
+
+    .login-main-text{
+   	 	color: #111;
+   		padding-top: 30vh;
+    	padding-bottom: 5vh;
+    	
+	}
     .main{
         margin-left: 50vw
     }
+    .title-text{
+    color: #fefefe;
+    padding: 10vh;
+}
 
 }
 .form-group{
@@ -49,16 +74,6 @@ body {
 }
 
 
-.login-main-text{
-    color: #111;
-    padding-top: 30vh;
-    padding-bottom: 5vh;
-}
-
-.title-text{
-    color: #fefefe;
-    padding: 10vh;
-}
 
 .btn-black{
     background-color: #000;

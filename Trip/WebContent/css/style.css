@@ -26,15 +26,6 @@ body {
     background-color: #eeeeee;
 }
 
-@media  (max-height: 768px) {
-
-}
-
-@media (min-width: 768px){
-
-
-
-}
 
 .requestForm{
     padding-top: 5em;
@@ -57,7 +48,25 @@ body {
 .btn-aceptar{
     background-color: #00adb5;
     color: #fff;
+    width: auto;
 }
+
+@media  (max-width: 500px) {
+	body{
+		font-size:12px;
+	}
+	
+	.ptext{
+		font-size:12px;
+	}
+}
+
+th{
+	vertical-align: middle; 
+	text-align:center;
+	width: auto;
+}
+
 
 
 /** JESUS **/

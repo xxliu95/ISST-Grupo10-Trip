@@ -5,6 +5,9 @@ import java.util.Collection;
 
 import javax.persistence.*;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 @Entity
 public class Viaje implements Serializable{
 	
@@ -22,6 +25,10 @@ public class Viaje implements Serializable{
 	private java.util.Date finicio;
 	@Temporal(TemporalType.DATE)
 	private java.util.Date ffin;
+	
+	@OneToMany(mappedBy = "viaje", fetch = FetchType.EAGER)
+	@Fetch(value = FetchMode.SUBSELECT)
+	private Collection<Factura> facturas;
 
 	private String descripcion;
 	private int status;
@@ -30,6 +37,14 @@ public class Viaje implements Serializable{
 	
 	public Empleado getViajero() {
 		return viajero;
+	}
+
+	public Collection<Factura> getFacturas() {
+		return facturas;
+	}
+
+	public void setFacturas(Collection<Factura> facturas) {
+		this.facturas = facturas;
 	}
 
 	public java.util.Date getFinicio() {

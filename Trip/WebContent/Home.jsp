@@ -19,14 +19,13 @@
 <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	
-<link href="css/login.min.css" rel="stylesheet" type="text/css">
 <link href="css/login.css" rel="stylesheet" type="text/css">
-<link href="css/style.min.css" rel="stylesheet" type="text/css">
 <link href="css/style.css" rel="stylesheet" type="text/css">
 
 </head>
@@ -101,10 +100,11 @@
         
             <c:choose>
 			<c:when test="${empleado.foto == null }">
+			<!-- hace falta evitar que no este vacio el archivo -->
             <form action="SubirFotoServlet" method="post" enctype="multipart/form-data">
 				<input type="hidden" name="email" value="${empleado.email}" />
    				<input type="file" name="file">	
-				<button type="submit" class="btn btn-sm btn-primary btn-create" style="margin-top: 8%">Poner una imagen</button>
+				<button type="submit" id="submitbutton" class="btn btn-sm btn-primary btn-create" style="margin-top: 8%">Poner una imagen</button>
 			</form>			
 			</c:when>
 			<c:otherwise>
@@ -175,16 +175,18 @@
 												<c:when test="${viajei.status == 1 }">Viaje solicitado</c:when>
 												<c:when test="${viajei.status == 2 }">Viaje aceptado</c:when>
 												<c:when test="${viajei.status == 3 }">Solicitando reintegro</c:when>
-												<c:when test="${viajei.status == 4 }">Reintegro aceptado</c:when>
-											</c:choose>
+												<c:when test="${viajei.status == 4 }">Reintegro aceptado por responsable</c:when>
+												<c:when test="${viajei.status == 5 }">Reintegro aceptado por OCG</c:when>											</c:choose>
 										</td>
-											<td><c:if test="${viajei.status == 2}">
-													<form action="Form2ReintegroServlet" method="post">
+											<td>
+													<form action="ViajeServlet" method="get">
 														<input type="hidden" name="nViaje"
 															value="${viajei.nViaje}" />
-														<button type="submit">Solicitar reintegro</button>
+														<button class="btn" type="submit">
+															<i class="fas fa-angle-right fa-3x" style="width:100px;"></i>	
+														</button>
 													</form>
-												</c:if></td>
+											</td>
 										</tr>
 								</tbody>
 								</c:forEach>
@@ -193,34 +195,8 @@
 					</div>
 				</div>
 			</div>
-			<!-- pagination -->
-    <nav aria-label="Page navigation example">
-        <ul class="pagination ">
-            <li class="page-item">
-                <a class="page-link" href="#" aria-label="Previous">
-                    <span aria-hidden="true">«</span>
-                    <span class="sr-only">Previous</span>
-                </a>
-            </li>
-            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                    <span aria-hidden="true">»</span>
-                    <span class="sr-only">Next</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-
-
-</div>
+		</div>
 	</shiro:user>
-	
-	</script>
-
-
 
 </body>
 </html>

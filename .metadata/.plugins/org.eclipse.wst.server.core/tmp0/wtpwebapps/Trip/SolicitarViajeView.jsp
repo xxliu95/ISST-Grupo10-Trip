@@ -217,11 +217,6 @@
 				</div>
 
 				<div class="form-row">
-					<label for="exampleFormControlFile1">Adjuntar factura</label> <input
-						type="file" class="form-control-file" id="exampleFormControlFile1">
-				</div>
-
-				<div class="form-row">
 					<span class="col-6"></span>
 				<a type="button" class="col-3 btn" href="HomeServlet">Cancelar</a>
 

@@ -44,7 +44,7 @@
 				<div class="login-main-text">
 					<h2>Registro</h2>
 				</div>
-				<div class="register-form">
+				<div class="login-form">
 					<form action="CreateEmpleadoServlet" method="post">
 						<div class="form-group">
 							<input name="email" type="text" class="form-control" placeholder="Email"
@@ -75,8 +75,12 @@
 						<div class="form-group">
 							<button type="submit" class="col-12 btn btn-black">ENVIAR</button>
 						</div>
-
+						
+	
 					</form>
+					<form action="LoginServlet" method="get">
+						<button type="submit" class="col-12 btn">Cancelar</button>
+					</form>	
 				</div>
 			</div>
 		</div>
