@@ -24,10 +24,10 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	
-<style><%@include file="css/login.min.css"%></style>
-<style><%@include file="css/login.css"%></style>
-<style><%@include file="css/style.min.css"%></style>
-<style><%@include file="css/style.css"%></style>
+<link href="css/login.min.css" rel="stylesheet" type="text/css">
+<link href="css/login.css" rel="stylesheet" type="text/css">
+<link href="css/style.min.css" rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>
@@ -98,7 +98,19 @@
 <div class="contenedor" style="margin-top: 4%">
     <div class="row border">
         <div class="col-auto img">
-            <img src="img/fotocarnet.jpg"  alt="" class="img-rounded" height="200rem" width="auto" style="padding: 8%">
+        
+            <c:choose>
+			<c:when test="${empleado.foto == null }">
+            <form action="SubirFotoServlet" method="post" enctype="multipart/form-data">
+				<input type="hidden" name="email" value="${empleado.email}" />
+   				<input type="file" name="file">	
+				<button type="submit" class="btn btn-sm btn-primary btn-create" style="margin-top: 8%">Poner una imagen</button>
+			</form>			
+			</c:when>
+			<c:otherwise>
+			<img src="${pageContext.request.contextPath}/ServeFileServlet?email=${empleado.email}"   alt="" class="img-rounded" height="200rem" width="auto" style="padding: 8%">
+			</c:otherwise>
+			</c:choose>
         </div>
         <div class="col-auto details">
             <blockquote>
@@ -158,7 +170,22 @@
 										<br>Descripción: ${viajei.descripcion }
 										<br>
 										</td>
-									</tr>
+										<td>
+											<c:choose>								
+												<c:when test="${viajei.status == 1 }">Viaje solicitado</c:when>
+												<c:when test="${viajei.status == 2 }">Viaje aceptado</c:when>
+												<c:when test="${viajei.status == 3 }">Solicitando reintegro</c:when>
+												<c:when test="${viajei.status == 4 }">Reintegro aceptado</c:when>
+											</c:choose>
+										</td>
+											<td><c:if test="${viajei.status == 2}">
+													<form action="Form2ReintegroServlet" method="post">
+														<input type="hidden" name="nViaje"
+															value="${viajei.nViaje}" />
+														<button type="submit">Solicitar reintegro</button>
+													</form>
+												</c:if></td>
+										</tr>
 								</tbody>
 								</c:forEach>
 							</table>
@@ -190,6 +217,9 @@
 
 </div>
 	</shiro:user>
+	
+	</script>
+
 
 
 </body>

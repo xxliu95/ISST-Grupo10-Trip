@@ -12,4 +12,8 @@
 <fullyQualifiedTypeName name="es.upm.dit.isst.trip.dao.EmpleadoDAO"/>
 <fullyQualifiedTypeName name="es.upm.dit.isst.trip.model.Empleado"/>
 <fullyQualifiedTypeName name="java.util.Collection"/>
+<fullyQualifiedTypeName name="java.awt.List"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="java.util.LinkedHashSet"/>
+<fullyQualifiedTypeName name="java.util.Set"/>
 </qualifiedTypeNameHistroy>

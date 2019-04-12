@@ -15,6 +15,9 @@ public class Empleado {
 	private String name;
 	private boolean responsable;
 	
+	@Lob
+	private byte[] foto;
+	
 	@OneToMany(mappedBy = "viajero", fetch = FetchType.EAGER)
 	private Collection<Viaje> viajes;
 	
@@ -24,13 +27,16 @@ public class Empleado {
 	@ManyToOne
 	private Empleado superior;
 	
+	
+	
 	public Empleado() {}
 
-	//getters y setters
+
 
 	public String getEmail() {
 		return email;
 	}
+
 
 
 	public void setEmail(String email) {
@@ -38,9 +44,11 @@ public class Empleado {
 	}
 
 
+
 	public String getId() {
 		return id;
 	}
+
 
 
 	public void setId(String id) {
@@ -48,9 +56,11 @@ public class Empleado {
 	}
 
 
+
 	public String getPassword() {
 		return password;
 	}
+
 
 
 	public void setPassword(String password) {
@@ -58,9 +68,11 @@ public class Empleado {
 	}
 
 
+
 	public String getName() {
 		return name;
 	}
+
 
 
 	public void setName(String name) {
@@ -68,9 +80,35 @@ public class Empleado {
 	}
 
 
+
+	public boolean isResponsable() {
+		return responsable;
+	}
+
+
+
+	public void setResponsable(boolean responsable) {
+		this.responsable = responsable;
+	}
+
+
+
+	public byte[] getFoto() {
+		return foto;
+	}
+
+
+
+	public void setFoto(byte[] foto) {
+		this.foto = foto;
+	}
+
+
+
 	public Collection<Viaje> getViajes() {
 		return viajes;
 	}
+
 
 
 	public void setViajes(Collection<Viaje> viajes) {
@@ -78,9 +116,11 @@ public class Empleado {
 	}
 
 
+
 	public Collection<Empleado> getSubordinados() {
 		return subordinados;
 	}
+
 
 
 	public void setSubordinados(Collection<Empleado> subordinados) {
@@ -88,20 +128,17 @@ public class Empleado {
 	}
 
 
+
 	public Empleado getSuperior() {
 		return superior;
 	}
+
 
 
 	public void setSuperior(Empleado superior) {
 		this.superior = superior;
 	}
 
-	public boolean isResponsable() {
-		return responsable;
-	}
-
-	public void setResponsable(boolean responsable) {
-		this.responsable = responsable;
-	}
+	//getters y setters
+	
 }

@@ -24,10 +24,10 @@
 <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
-<style><%@include file="css/login.min.css"%></style>
-<style><%@include file="css/login.css"%></style>
-<style><%@include file="css/style.min.css"%></style>
-<style><%@include file="css/style.css"%></style>
+<link href="css/login.min.css" rel="stylesheet" type="text/css">
+<link href="css/login.css" rel="stylesheet" type="text/css">
+<link href="css/style.min.css" rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>

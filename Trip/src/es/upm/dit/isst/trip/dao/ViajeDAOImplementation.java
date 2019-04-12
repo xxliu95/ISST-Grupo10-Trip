@@ -32,7 +32,7 @@ public class ViajeDAOImplementation implements ViajeDAO{
 
 	@SuppressWarnings("finally")
 	@Override
-	public Viaje read(String nViaje) {
+	public Viaje read(int nViaje) {
 		Viaje professor = null;
 		Session session = SessionFactoryService.get().openSession();
 		try {
