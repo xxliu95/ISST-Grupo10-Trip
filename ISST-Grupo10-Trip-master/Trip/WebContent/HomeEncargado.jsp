@@ -98,7 +98,18 @@
 				<div class="contenedor" style="margin-top: 4%">
 				    <div class="row border">
 				        <div class="col-auto img">
-				            <img src="img/fotocarnet.jpg"  alt="" class="img-rounded" height="200rem" width="auto" style="padding: 8%">
+				            <c:choose>
+			<c:when test="${empleado.foto == null }">
+            <form action="SubirFotoServlet" method="post" enctype="multipart/form-data">
+				<input type="hidden" name="email" value="${empleado.email}" />
+   				<input type="file" name="file">	
+				<button type="submit" class="btn btn-sm btn-primary btn-create" style="margin-top: 8%">Poner una imagen</button>
+			</form>			
+			</c:when>
+			<c:otherwise>
+			<img src="${pageContext.request.contextPath}/ServeFileServlet?email=${empleado.email}"   alt="" class="img-rounded" height="200rem" width="auto" style="padding: 8%">
+			</c:otherwise>
+			</c:choose>
 				        </div>
 				        <div class="col-auto details">
 				            <blockquote>
@@ -127,12 +138,19 @@
 									<c:forEach items="${viajesEmpleados}" var="viajei">
 								<tbody>
 									<tr>
-										<td class="hidden-xs">${viajei.nViaje}</td>								
+										<td class="hidden-xs">${viajei.nViaje}</td>	
+										<td ></td>								
 										<td>Fecha inicio: ${viajei.finicio }
 										<br>Fecha fin:  ${viajei.ffin }
 										<br>Descripción: ${viajei.descripcion }
 										<br>
 										</td> 
+										<td><c:if test="${viajei.status == 1}">
+							<form action="Form2EncargadoServlet" method="post">
+								<input type="hidden" name="nViaje" value="${viajei.nViaje}" />
+								<button type="submit">Aceptar viaje</button>
+							</form>
+						</c:if></td>
 									</tr>
 								</tbody>
 									</c:forEach>				

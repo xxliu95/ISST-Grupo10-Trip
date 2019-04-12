@@ -35,6 +35,7 @@
 		<div class="sidenav">
 			<div class="title-text">
 				<h1>Trip</h1>
+				 <img src="img/avion.jpg"/>
 			</div>
 		</div>
 
