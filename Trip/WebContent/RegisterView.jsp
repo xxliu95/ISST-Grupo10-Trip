@@ -65,7 +65,7 @@
 			  					<option value="null" selected disabled hidden>Responsable</option>
   									<c:forEach items="${responsable_list}" var="responsablei">
     									<option value="${ responsablei.email}">
-      										${responsablei.name} - ${responsable.email}
+      										${responsablei.name} - ${responsablei.email}
     								</option>
   							</c:forEach>
 						</select>

@@ -115,12 +115,21 @@
 						<!-- hace falta evitar que no este vacio el archivo -->
 						<form action="SubirFotoServlet" method="post"
 							enctype="multipart/form-data">
-							<input type="hidden" name="email" value="${empleado.email}" />
-							<input type="file" name="file">
-							<button type="submit" id="submitbutton"
-								class="btn btn-sm btn-primary btn-create"
-								style="margin-top: 8%">Poner una imagen</button>
-						</form>
+								<div class="row">
+									<div class="col-12 input-group">
+										<div class="custom-file">
+											<input type="hidden" name="email" value="${empleado.email}" />
+											<input type="file" class="form-control-file" name="file"
+												id="exampleFormControlFile1">
+										</div>
+									</div>
+								</div>
+								<div class="col-12">
+									<button type="submit" id="submitbutton"
+										class="btn btn-sm btn-primary btn-create"
+										style="margin-top: 8%">Poner una imagen</button>
+								</div>
+							</form>
 					</c:when>
 					<c:otherwise>
 						<img

@@ -38,6 +38,7 @@ public class LoginServlet extends HttpServlet {
 		String id = req.getParameter( "email" );
 		String pass = req.getParameter( "password" );
 		Subject currentUser = SecurityUtils.getSubject();
+		
 		if ( !currentUser.isAuthenticated() ) {
 			UsernamePasswordToken token = new UsernamePasswordToken( id, pass );
 			try {

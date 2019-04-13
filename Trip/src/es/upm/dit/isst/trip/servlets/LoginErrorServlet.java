@@ -10,6 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.subject.Subject;
+
 import es.upm.dit.isst.trip.dao.EmpleadoDAO;
 import es.upm.dit.isst.trip.dao.EmpleadoDAOImplementation;
 import es.upm.dit.isst.trip.model.Empleado;
@@ -20,6 +23,6 @@ public class LoginErrorServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String msg = "Usuario o contraseña incorrecta";
 		req.setAttribute("msg", msg);
-		getServletContext().getRequestDispatcher( "/LoginView.jsp" ).forward( req, resp );
+		resp.sendRedirect( req.getContextPath() + "/LoginServlet" );
 	}
 }

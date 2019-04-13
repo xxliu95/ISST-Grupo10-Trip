@@ -133,6 +133,7 @@
 					<c:forEach items="${viajes}" var="viajei">
 						<tbody>
 							<tr>
+								<c:if test="${viajei.status == 4 }">
 								<td class="hidden-xs">${viajei.nViaje}</td>
 								<td>${viajei.viajero.name }</td>
 								<td><c:choose>
@@ -153,6 +154,7 @@
 											<button class="btn btn-aceptar" type="submit"><p class="ptext">Aceptar Reintegro</p></button>
 										</form>
 									</c:if></td>
+								</c:if>>
 							</tr>
 						</tbody>
 					</c:forEach>
