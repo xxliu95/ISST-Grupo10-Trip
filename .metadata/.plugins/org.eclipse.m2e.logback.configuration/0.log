@@ -6967,3 +6967,11 @@ java.lang.NullPointerException: null
 2019-04-13 12:42:03,298 [Worker-48: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Dropbox\ISST\Trabajo\ISST-Grupo10-Trip\workspace\Trip\src\main\resources
 2019-04-13 12:42:03,299 [Worker-48: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
 2019-04-13 12:42:03,307 [Worker-48: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Dropbox\ISST\Trabajo\ISST-Grupo10-Trip\workspace\Trip\src\test\resources
+2019-04-13 13:18:04,431 [Worker-64: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2019-04-13 13:18:04,439 [Worker-64: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Dropbox\ISST\Trabajo\ISST-Grupo10-Trip\workspace\Trip\src\main\resources
+2019-04-13 13:18:04,439 [Worker-64: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2019-04-13 13:18:04,447 [Worker-64: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Dropbox\ISST\Trabajo\ISST-Grupo10-Trip\workspace\Trip\src\test\resources
+2019-04-13 13:18:09,595 [Worker-64: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2019-04-13 13:18:09,603 [Worker-64: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Dropbox\ISST\Trabajo\ISST-Grupo10-Trip\workspace\Trip\src\main\resources
+2019-04-13 13:18:09,603 [Worker-64: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (GBK actually) to copy filtered resources, i.e. build is platform dependent!
+2019-04-13 13:18:09,611 [Worker-64: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory D:\Dropbox\ISST\Trabajo\ISST-Grupo10-Trip\workspace\Trip\src\test\resources

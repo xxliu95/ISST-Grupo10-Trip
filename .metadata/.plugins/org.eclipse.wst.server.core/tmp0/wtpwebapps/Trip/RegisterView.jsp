@@ -45,19 +45,19 @@
 				<div class="login-form">
 					<form action="CreateEmpleadoServlet" method="post">
 						<div class="form-group">
-							<input name="email" type="text" class="form-control" placeholder="Email"
+							<input name="email" type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-control" title="a@a.domain" placeholder="Email"
 								required>
 						</div>
 						<div class="form-group">
-							<input name="password" type="password" class="form-control"
+							<input name="password" type="password" pattern=".{6,}" title="6 o más caracteres" class="form-control"
 								placeholder="Contraseña" required>
 						</div>
 						<div class="form-group">
-							<input name="name" type="text" class="form-control"
+							<input name="name" type="text" class="form-control" pattern=".{2,}" title="2 o más caracteres"
 								placeholder="Nombres y apellidos" required>
 						</div>
 						<div class="form-group">
-							<input name="id" type="text" class="form-control"
+							<input name="id" type="text" class="form-control" pattern=".{4,}" title="4 o más caracteres"
 								placeholder="ID empleado" required>
 						</div>
 						<div class="form-group">

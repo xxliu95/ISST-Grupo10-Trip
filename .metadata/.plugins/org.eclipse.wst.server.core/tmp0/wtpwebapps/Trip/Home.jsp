@@ -155,6 +155,7 @@
 								</div>
 								<div class="col col-auto text-right">
 									<form action="SolicitarViajeServlet" method="get">
+										<input type="hidden" name="email" value="${empleado.email}" />
 										<button type="submit"
 											class="btn btn-sm btn-primary btn-create"
 											style="margin-top: 8%">Solicitar</button>

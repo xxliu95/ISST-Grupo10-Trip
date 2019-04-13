@@ -56,13 +56,13 @@
 						<label for="exampleFormControlInput1">Email</label> 
 						<input
 							type="email" class="form-control" name="email" id="exampleFormControlInput1"
-							placeholder="name@example.com"/>
+							value="${empleado.email}" required/>
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="col-sm-12">
-						<label for="exampleFormControlInput1">Nombre</label> <input
-							type="text" class="form-control" placeholder="Nombre"/>
+						<label for="exampleFormControlInput1">Nombre</label> <input value="${empleado.name}"
+							type="text" class="form-control" placeholder="Nombre" required/>
 					</div>
 				</div>
 
