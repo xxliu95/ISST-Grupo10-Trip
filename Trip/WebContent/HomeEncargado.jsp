@@ -93,10 +93,10 @@
 			<div class="row border">
 				<div class="col-auto img">
 					<c:choose>
-						<c:when test="${empleado.foto == null }">
+						<c:when test="${responsable.foto == null }">
 							<form action="SubirFotoServlet" method="post"
 								enctype="multipart/form-data">
-								<input type="hidden" name="email" value="${empleado.email}" />
+								<input type="hidden" name="email" value="${responsable.email}" />
 								<input type="file" name="file">
 								<button type="submit" class="btn btn-sm btn-primary btn-create"
 									style="margin-top: 8%">Poner una imagen</button>
@@ -104,7 +104,7 @@
 						</c:when>
 						<c:otherwise>
 							<img
-								src="${pageContext.request.contextPath}/ServeFileServlet?email=${empleado.email}"
+								src="${pageContext.request.contextPath}/ServeFileServlet?email=${responsable.email}"
 								alt="" class="img-rounded" height="200rem" width="auto"
 								style="padding: 8%">
 						</c:otherwise>
