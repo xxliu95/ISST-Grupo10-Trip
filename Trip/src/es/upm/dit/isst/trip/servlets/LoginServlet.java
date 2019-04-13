@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
@@ -48,9 +49,9 @@ public class LoginServlet extends HttpServlet {
 				else
 					resp.sendRedirect( req.getContextPath() + "/HomeServlet?email=" + currentUser.getPrincipal() );
 			} catch ( Exception e ) {
-				resp.sendRedirect( req.getContextPath() + "/LoginServlet" );
+				resp.sendRedirect( req.getContextPath() + "/LoginErrorServlet" );
 			}
 		} else
-			resp.sendRedirect( req.getContextPath() + "/LoginServlet" );
+			resp.sendRedirect( req.getContextPath() + "/LoginErrorServlet" );
 	}
 }

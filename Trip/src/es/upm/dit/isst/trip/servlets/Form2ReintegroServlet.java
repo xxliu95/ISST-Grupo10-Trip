@@ -22,5 +22,5 @@ public class Form2ReintegroServlet extends HttpServlet {
 		Viaje viaje = vdao.read(Integer.parseInt(nViaje));
 		viaje.setStatus(3);
 		vdao.update(viaje);
-		resp.sendRedirect( req.getContextPath() + "ViajeServlet?nViaje" + viaje.getnViaje());	}
+		resp.sendRedirect( req.getContextPath() + "/ViajeServlet?nViaje=" + viaje.getnViaje());	}
 }

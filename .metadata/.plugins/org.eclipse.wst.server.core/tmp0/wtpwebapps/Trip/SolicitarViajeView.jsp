@@ -56,13 +56,13 @@
 						<label for="exampleFormControlInput1">Email</label> 
 						<input
 							type="email" class="form-control" name="email" id="exampleFormControlInput1"
-							value="${empleado.email}" required/>
+							value="${empleado.email}" disabled/>
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="col-sm-12">
 						<label for="exampleFormControlInput1">Nombre</label> <input value="${empleado.name}"
-							type="text" class="form-control" placeholder="Nombre" required/>
+							type="text" class="form-control"  disabled/>
 					</div>
 				</div>
 
@@ -216,9 +216,7 @@
 
 				<div class="form-row">
 					<span class="col-6"></span>
-				<a type="button" class="col-3 btn" href="HomeServlet">Cancelar</a>
-
-					
+					<a type="button" class="col-3 btn" href="HomeServlet?email=${empleado.email}">Cancelar</a>		
 					<button type="submit" class="col-3 btn btn-aceptar"
 						>Guardar cambios</button>
 				</div>

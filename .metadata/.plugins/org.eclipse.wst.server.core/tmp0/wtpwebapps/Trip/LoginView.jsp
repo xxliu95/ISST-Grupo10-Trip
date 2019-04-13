@@ -50,8 +50,13 @@
 				
 				<div class="login-form">
 					<form id="myForm" action="LoginServlet" method="post">
+						<c:if test="${msg != null}">
+							<div class="alert alert-danger" role="alert">
+								${msg}
+							</div>
+						</c:if>
 						<div class="form-group">
-							<input name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="a@a.domain" type="text" class="form-control" placeholder="Email">
+							<input name="email" type="text" class="form-control" placeholder="Email">
 						</div>
 						<div class="form-group">
 							<input name="password" type="password" class="form-control"

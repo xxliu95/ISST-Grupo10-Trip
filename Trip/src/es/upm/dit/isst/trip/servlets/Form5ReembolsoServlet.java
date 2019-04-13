@@ -22,7 +22,7 @@ public class Form5ReembolsoServlet extends HttpServlet {
 		Viaje viaje = vdao.read(Integer.parseInt(nViaje));
 		viaje.setStatus(6);
 		vdao.update(viaje);
-		resp.sendRedirect( req.getContextPath() + "/HomeServlet?email=" + viaje.getViajero().getEmail());
-	}
+		resp.sendRedirect( req.getContextPath() + "/ViajeServlet?nViaje=" + viaje.getnViaje());
+		}
 
 }
