@@ -26,6 +26,7 @@ public class HomeEncargadoServlet extends HttpServlet {
 		String email = req.getParameter("email");
 		EmpleadoDAO edao =  EmpleadoDAOImplementation.getInstance();
 		Empleado responsable = edao.read(email);
+		req.setAttribute("responsable", responsable);
 		Collection<Empleado> subordinados = responsable.getSubordinados();
 		/* comienzo: eliminar subordinados repetidos */
 		Set<Empleado> listWithoutDuplicates = new LinkedHashSet<Empleado>(subordinados);
@@ -43,8 +44,7 @@ public class HomeEncargadoServlet extends HttpServlet {
 		}
 		//parametro para sacar las listas de los empleados
 		req.setAttribute("viajesEmpleados", viajes);
-		getServletContext().getRequestDispatcher( "/HomeEncargado.jsp" ).forward( req, resp );
+		getServletContext().getRequestDispatcher( "/HomeEncargado.jsp" ).forward( req, resp );	
 	}
-	
 }
 

@@ -12,7 +12,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Home Trip</title>
+<title>Viaje Trip</title>
 
 <!-- Custom fonts for this template -->
 <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
@@ -25,32 +25,25 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 	
-<link href="css/login.css" rel="stylesheet" type="text/css">
 <link href="css/style.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>
 	<shiro:guest>
 
-<div class="sidenav">
+		<div class="sidenav">
 			<div class="title-text">
 				<h1>Trip</h1>
 			</div>
 		</div>
-					
 
 		<div class="main">
 			<div class="col-10">
-				<div class="login-main-text row">
-					<h2 class="col-8">Gestión de viajes</h2>
-					<div class="col-2" style="
-					  z-index: -1;
-					  position: fixed;
-					" id="spinner"></div>
+				<div class="login-main-text">
+					<h2>Gestión de viajes</h2>
 				</div>
-				
 				<div class="login-form">
-					<form id="myForm" action="LoginServlet" method="post">
+					<form action="LoginServlet" method="post">
 						<div class="form-group">
 							<input name="email" type="text" class="form-control" placeholder="Email">
 						</div>
@@ -64,18 +57,12 @@
 					</form>
 					<form action="RegisterServlet" method="get">
 						<button type="submit" class="col-12 btn">Registrar</button>
-					</form>					
+					</form>
 					
 				</div>
 			</div>
 		</div>
-<script>
-	document.getElementById("myForm").addEventListener("submit", myFunction);
 
-	function myFunction() {
-		document.getElementById("spinner").innerHTML='<span class="col-12"></span><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i><span class="sr-only">Loading...</span>';
-	}
-</script>
 		
 
 	</shiro:guest>
@@ -105,103 +92,27 @@
     </div>
 </nav>
 
-<!--- Card Profile -->
-	<div class="contenedor" style="margin-top: 4%">
-		<div class="row" style="line-height: 50px;">
-			<span class="col-2"></span>
-			<div class="col-4">
-				<c:choose>
-					<c:when test="${empleado.foto == null }">
-						<!-- hace falta evitar que no este vacio el archivo -->
-						<form action="SubirFotoServlet" method="post"
-							enctype="multipart/form-data">
-							<input type="hidden" name="email" value="${empleado.email}" />
-							<input type="file" name="file">
-							<button type="submit" id="submitbutton"
-								class="btn btn-sm btn-primary btn-create"
-								style="margin-top: 8%">Poner una imagen</button>
-						</form>
-					</c:when>
-					<c:otherwise>
-						<img
-							src="${pageContext.request.contextPath}/ServeFileServlet?email=${empleado.email}"
-							alt="" class=" foto">
-					</c:otherwise>
-				</c:choose>
-			</div>
-			<div class="col-6 details">
-				<blockquote>
-					<h5>${empleado.name}</h5>
-					<small><cite title="Source Title">Empleado <i
-							class="icon-map-marker"></i></cite></small>
-				</blockquote>
-				<p>
-					${empleado.email} <br> ID Empleado: ${empleado.id} <br>
 
-				</p>
-			</div>
-		</div>
-
-
-		<!-- Solicitar viaje  -->
-		<div class="solicitar" style="margin-top: 1%">
-			<div class="row border">
-				<div class="col-md-10 col-md-offset-1">
-					<div class="panel panel-default panel-table">
-						<div class="panel-heading">
-							<div class="row">
-								<div class="col col-auto">
-									<h3 class="panel-title">Solicitar un viaje</h3>
-								</div>
-								<div class="col col-auto text-right">
-									<form action="SolicitarViajeServlet" method="get">
-										<button type="submit"
-											class="btn btn-sm btn-primary btn-create"
-											style="margin-top: 8%">Solicitar</button>
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>
-
-
-
-					<!-- List table -->
+		<!-- Facturas con el boton de descarga -->
 
 					<div class="panel-body">
 						<table class="table table-striped table-bordered table-list">
 							<thead>
 								<tr>
 									<th class="hidden-xs">ID</th>
-									<th>Viaje</th>
-									<th>Información</th>
+									<th>Facturas adjuntadas</th>
 								</tr>
 							</thead>
-							<c:forEach items="${empleado.viajes}" var="viajei">
+							<c:forEach items="${facturas}" var="facturai">
 								<tbody>
 									<tr>
-										<td class="hidden-xs">${viajei.nViaje}</td>
-										<td>${viajei.destino }</td>
-										<td>Fecha inicio: ${viajei.finicio } <br>Fecha fin:
-											${viajei.ffin } <br>Descripción: ${viajei.descripcion }
-											<br>
-										</td>
-										<td><c:choose>
-												<c:when test="${viajei.status == 1 }">Viaje solicitado</c:when>
-												<c:when test="${viajei.status == 2 }">Viaje aceptado</c:when>
-												<c:when test="${viajei.status == 3 }">Solicitando reintegro</c:when>
-												<c:when test="${viajei.status == 4 }">Reintegro aceptado por responsable</c:when>
-												<c:when test="${viajei.status == 5 }">Reintegro aceptado por OCG</c:when>
-												<c:when test="${viajei.status == 6 }">Solicitando reembolso</c:when>
-												<c:when test="${viajei.status == 7 }">Reembolso aceptado</c:when>											
-											</c:choose></td>
+										<td class="hidden-xs">${facturai.viaje.nViaje}</td>
+										<td>${facturai.nFactura }</td>
 										<td>
-											<form action="ViajeServlet" method="get">
-												<input type="hidden" name="nViaje" value="${viajei.nViaje}" />
-												<button class="btn" type="submit">
-													<i class="fas fa-angle-right fa-3x" style="width: 100px;"></i>
-												</button>
-											</form>
+										<form action="ServeFileFacturasServlet" method="get">
+											<input type="hidden" name="nFactura" value="${facturai.nFactura}" />
+											<button type="submit">Descargar</button>
+										</form>
 										</td>
 									</tr>
 								</tbody>
@@ -212,7 +123,8 @@
 			</div>
 		</div>
 	</div>
+	
 	</shiro:user>
-
+	
 </body>
 </html>

@@ -1,6 +1,9 @@
 package es.upm.dit.isst.trip.servlets;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collection;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,16 +15,16 @@ import es.upm.dit.isst.trip.dao.ViajeDAOImplementation;
 import es.upm.dit.isst.trip.model.Viaje;
 
 /**
- * Servlet implementation class Form2EncargadoServlet
+ * Servlet implementation class FacturasServlet
  */
-@WebServlet("/FormEncargadoServlet")
-public class FormEncargadoServlet extends HttpServlet {
+@WebServlet("/FacturasServlet")
+public class FacturasServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String nViaje = req.getParameter("nViaje").toString();
-		ViajeDAO vdao = ViajeDAOImplementation.getInstance();
-		Viaje viaje = vdao.read(Integer.parseInt(nViaje));
-		viaje.setStatus(2);
-		vdao.update(viaje);
-		resp.sendRedirect( req.getContextPath() + "/HomeEncargadoServlet?email=" + viaje.getViajero().getSuperior().getEmail());
+		ViajeDAO vdao =  ViajeDAOImplementation.getInstance();
+		String nViaje = req.getParameter("nViaje");
+		Viaje viaje = vdao.read(Integer.valueOf(nViaje));
+		req.setAttribute("facturas", viaje.getFacturas());
+		getServletContext().getRequestDispatcher( "/FacturasView.jsp" ).forward( req, resp );
 	}
+
 }

@@ -35,7 +35,9 @@ public class SubirFotoServlet extends HttpServlet {
 		empleado.setFoto(output.toByteArray());
 		edao.update(empleado);
 		
-		
+		if(empleado.isResponsable()) {
+			resp.sendRedirect( req.getContextPath() + "/HomeEncargadoServlet?email="+email);
+		}else
 		resp.sendRedirect( req.getContextPath() + "/HomeServlet?email="+email);
 	}
 

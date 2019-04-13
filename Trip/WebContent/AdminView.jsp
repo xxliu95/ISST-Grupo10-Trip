@@ -141,6 +141,8 @@
 										<c:when test="${viajei.status == 3 }">Solicitando reintegro</c:when>
 										<c:when test="${viajei.status == 4 }">Reintegro aceptado por responsable</c:when>
 										<c:when test="${viajei.status == 5 }">Reintegro aceptado por OCG</c:when>
+										<c:when test="${viajei.status == 6 }">Solicitando reembolso</c:when>
+										<c:when test="${viajei.status == 7 }">Reembolso aceptado</c:when>
 									</c:choose></td>
 								<td>Fecha inicio: ${viajei.finicio } <br>Fecha fin:
 									${viajei.ffin } <br>Descripción: ${viajei.descripcion } <br>
