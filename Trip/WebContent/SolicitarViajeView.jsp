@@ -55,14 +55,14 @@
 					<div class="col-12">
 						<label for="exampleFormControlInput1">Email</label> 
 						<input
-							type="email" class="form-control" name="email" id="exampleFormControlInput1"
-							value="${empleado.email}" disabled/>
+							type="email" class="form-control" name="email" id="exampleFormControlInput1" value="${empleado.email}"/>
+							<!-- value="${empleado.email}" disabled/> -->
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="col-sm-12">
 						<label for="exampleFormControlInput1">Nombre</label> <input value="${empleado.name}"
-							type="text" class="form-control"  disabled/>
+							type="text" class="form-control"/>
 					</div>
 				</div>
 
@@ -155,14 +155,14 @@
 				<div class="form-row">
 					<div class="col-sm-6">
 						<div class="form-group">
-							<label>Periodo inicio</label> <input type="date" name="finicio"
+							<label>Fecha inicio</label> <input type="date" name="finicio"
 								max="3000-12-31" min="1000-01-01" class="form-control"/>
 						</div>
 					</div>
 
 					<div class="col-sm-6">
 						<div class="form-group">
-							<label>Periodo fin</label> <input type="date" name="ffin"
+							<label>Fecha fin</label> <input type="date" name="ffin"
 								min="1000-01-01" max="3000-12-31" class="form-control"/>
 
 						</div>
@@ -217,8 +217,7 @@
 				<div class="form-row">
 					<span class="col-6"></span>
 					<a type="button" class="col-3 btn" href="HomeServlet?email=${empleado.email}">Cancelar</a>		
-					<button type="submit" class="col-3 btn btn-aceptar"
-						>Guardar cambios</button>
+					<button type="submit" class="col-3 btn btn-aceptar">Guardar cambios</button>
 				</div>
 				
 			</form>

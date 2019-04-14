@@ -16,6 +16,7 @@ import es.upm.dit.isst.trip.model.Empleado;
 public class SolicitarViajeServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
 		String email = req.getParameter("email");
 
 		EmpleadoDAO edao = EmpleadoDAOImplementation.getInstance();

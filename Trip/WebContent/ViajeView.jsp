@@ -142,11 +142,12 @@
 									<h2>Viaje ${viaje.nViaje}</h2>
 								</div>
 								<div class="col col-auto text-right">
-									<form action="SolicitarViajeServlet" method="get">
+									<form action="EditarViajeServlet" method="get">
 										<button type="submit"
 											class="btn btn-sm btn-primary btn-create"
 											style="margin-top: 8%">Editar solicitud</button>
 									</form>
+									<a type="button" class="btn btn-sm btn-primary btn-create" href="HomeServlet?email=${viaje.viajero.email}">Volver</a>
 								</div>
 							</div>
 						</div>
