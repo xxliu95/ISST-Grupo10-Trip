@@ -151,14 +151,14 @@
 					<div class="col-sm-6">
 						<div class="form-group">
 							<label>Fecha inicio</label> <input type="date" name="finicio"
-								max="3000-12-31" min="1000-01-01" class="form-control" value="${viaje.finicio }"/>
+								max="3000-12-31" min="1000-01-01" class="form-control" value="${viaje.finicio}" disabled/>
 						</div>
 					</div>
 
 					<div class="col-sm-6">
 						<div class="form-group">
 							<label>Fecha fin</label> <input type="date" name="ffin"
-								min="1000-01-01" max="3000-12-31" class="form-control" value="${viaje.ffin }"/>
+								min="1000-01-01" max="3000-12-31" class="form-control" value="${viaje.ffin}" disabled/>
 
 						</div>
 					</div>
@@ -177,11 +177,9 @@
 				<div class="form-row">
 					<div class="col-sm-12">
 						<label for="exampleFormControlTextarea1">Objeto del viaje</label>
-						<textarea class="form-control" name="descripcion" id="exampleFormControlTextarea1"
-							rows="3">
-							
-				
-                </textarea>
+						<textarea class="form-control" name="descripcion" id="exampleFormControlTextarea1" rows="3" >
+						${viaje.descripcion}
+						</textarea>
 					</div>
 				</div>
 				<div>
@@ -192,9 +190,8 @@
 					<div class="col-sm-12">
 						<label for="exampleFormControlTextarea1">Exponga aquí los
 							gastos previstos del viaje</label>
-						<textarea class="form-control" id="exampleFormControlTextarea1"
-							rows="3">
-                </textarea>
+						<textarea class="form-control" id="exampleFormControlTextarea1" rows="3" value="">
+						</textarea>
 					</div>
 				</div>
 
@@ -203,7 +200,7 @@
 						<label for="inputEmail3" class="col-form-label">Gastos previstos</label>
 					</div>
 					<div class="col-sm-8">
-						<input type="number" name="presupuesto" value="${viaje.presupuesto }" min="0" step="0.01"
+						<input type="number" name="presupuesto" value="${viaje.presupuesto}" min="0" step="0.01"
 							data-number-to-fixed="2" data-number-stepfactor="100"
 							class="form-control currency" id="c2" />
 					</div>
@@ -212,7 +209,7 @@
 				<div class="form-row">
 					<span class="col-6"></span>
 					<a type="button" class="col-3 btn" href="HomeServlet?email=${viaje.viajero.email}">Cancelar</a>	
-					<input type="hidden" name="nViaje" value="${viaje.nViaje }">	
+					<input type="hidden" name="nViaje" value="${viaje.nViaje}">	
 					<button type="submit" class="col-3 btn btn-aceptar">Guardar cambios</button>
 				</div>
 				

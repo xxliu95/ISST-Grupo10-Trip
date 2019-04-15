@@ -182,11 +182,8 @@
 				<div class="form-row">
 					<div class="col-sm-12">
 						<label for="exampleFormControlTextarea1">Objeto del viaje</label>
-						<textarea class="form-control" name="descripcion" id="exampleFormControlTextarea1"
-							rows="3">
-							
-				
-                </textarea>
+						<textarea class="form-control" name="descripcion" id="exampleFormControlTextarea1" rows="3">
+						</textarea>
 					</div>
 				</div>
 				<div>
@@ -197,9 +194,8 @@
 					<div class="col-sm-12">
 						<label for="exampleFormControlTextarea1">Exponga aquí los
 							gastos previstos del viaje</label>
-						<textarea class="form-control" id="exampleFormControlTextarea1"
-							rows="3">
-                </textarea>
+						<textarea class="form-control" id="exampleFormControlTextarea1" rows="3">
+						</textarea>
 					</div>
 				</div>
 
@@ -208,7 +204,7 @@
 						<label for="inputEmail3" class="col-form-label">Gastos previstos</label>
 					</div>
 					<div class="col-sm-8">
-						<input type="number" name="presupuesto" value="1000" min="0" step="0.01"
+						<input type="number" name="presupuesto" min="0" step="0.01"
 							data-number-to-fixed="2" data-number-stepfactor="100"
 							class="form-control currency" id="c2" />
 					</div>

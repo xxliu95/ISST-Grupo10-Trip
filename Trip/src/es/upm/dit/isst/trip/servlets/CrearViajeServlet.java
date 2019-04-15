@@ -58,10 +58,8 @@ public class CrearViajeServlet extends HttpServlet{
 		viaje.setFinicio( finicio );
 		viaje.setFfin( ffin );		
 		viaje.setPresupuesto( presupuesto );
-		//viaje.setEmpleado(empleado);
 		viaje.setnViaje(1);
 		viaje.setDestino(destino);
-		//lo he cambiado por setViajero
 		viaje.setViajero(empleado);
 	
 		
