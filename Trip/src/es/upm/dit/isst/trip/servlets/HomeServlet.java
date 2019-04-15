@@ -29,8 +29,6 @@ public class HomeServlet extends HttpServlet {
 		req.setAttribute("empleado", empleado);
 		getServletContext().getRequestDispatcher( "/Home.jsp" ).forward( req, resp );
 		
-	
-	
 	}
 
 }

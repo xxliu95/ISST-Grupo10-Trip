@@ -143,6 +143,8 @@
 								</div>
 								<div class="col col-auto text-right">
 									<form action="EditarViajeServlet" method="get">
+										<input type="hidden" name="nviaje" value="${viaje.nViaje }" />
+										<input type="hidden" name="email" value="${viaje.viajero.email}" />
 										<button type="submit"
 											class="btn btn-sm btn-primary btn-create"
 											style="margin-top: 8%">Editar solicitud</button>
