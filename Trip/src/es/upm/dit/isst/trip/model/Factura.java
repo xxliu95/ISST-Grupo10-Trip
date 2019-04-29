@@ -1,11 +1,12 @@
 package es.upm.dit.isst.trip.model;
 
+import java.io.Serializable;
 import java.util.Collection;
 
 import javax.persistence.*;
 
 @Entity
-public class Factura {
+public class Factura implements Serializable{
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)

@@ -112,7 +112,7 @@
 				</div>
 
 			</div>
-			<div class="row"">
+			<div class="row">
 				<div class="col-12">
 					<h3 style="text-align: centered;">Listado de Reintegros</h3>
 				</div>
@@ -154,7 +154,7 @@
 											<button class="btn btn-aceptar" type="submit"><p class="ptext">Aceptar Reintegro</p></button>
 										</form>
 									</c:if></td>
-								</c:if>>
+								</c:if>
 							</tr>
 						</tbody>
 					</c:forEach>

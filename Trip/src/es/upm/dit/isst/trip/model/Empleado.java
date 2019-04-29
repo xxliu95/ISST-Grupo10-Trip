@@ -4,6 +4,9 @@ import java.util.Collection;
 
 import javax.persistence.*;
 
+import org.hibernate.annotations.Fetch;
+import org.hibernate.annotations.FetchMode;
+
 @Entity
 public class Empleado {
 	
@@ -23,6 +26,10 @@ public class Empleado {
 	
 	@OneToMany(mappedBy = "superior", fetch = FetchType.EAGER) 
 	private Collection<Empleado> subordinados;
+	
+	@OneToMany(mappedBy = "notificado", fetch = FetchType.EAGER) 
+	@Fetch(value = FetchMode.SUBSELECT)
+	private Collection<Notificacion> notificaciones;
 	
 	@ManyToOne
 	private Empleado superior;

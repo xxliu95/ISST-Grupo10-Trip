@@ -12,9 +12,12 @@ import org.apache.shiro.crypto.hash.Sha256Hash;
 
 import es.upm.dit.isst.trip.dao.EmpleadoDAO;
 import es.upm.dit.isst.trip.dao.EmpleadoDAOImplementation;
+import es.upm.dit.isst.trip.dao.NotificacionDAO;
+import es.upm.dit.isst.trip.dao.NotificacionDAOImplementation;
 import es.upm.dit.isst.trip.dao.ViajeDAO;
 import es.upm.dit.isst.trip.dao.ViajeDAOImplementation;
 import es.upm.dit.isst.trip.model.Empleado;
+import es.upm.dit.isst.trip.model.Notificacion;
 import es.upm.dit.isst.trip.model.Viaje;
 
 import java.text.ParseException;
@@ -46,7 +49,7 @@ public class CrearViajeServlet extends HttpServlet{
 		String destino = req.getParameter("destino");
 		
 		ViajeDAO vdao = ViajeDAOImplementation.getInstance();
-		
+		NotificacionDAO ndao = NotificacionDAOImplementation.getInstance();
 		EmpleadoDAO edao = EmpleadoDAOImplementation.getInstance();
 		Empleado empleado = edao.read(email);
 		
@@ -61,8 +64,17 @@ public class CrearViajeServlet extends HttpServlet{
 		viaje.setnViaje(1);
 		viaje.setDestino(destino);
 		viaje.setViajero(empleado);
-	
 		
+	    Notificacion notificacion = new Notificacion();
+	    
+	    String destinatario = viaje.getEmpleado().getSuperior().getEmail();
+	    String subject = "TRIP - Nueva solicitud de viaje";
+	    String msg = empleado.getName() + "  " + email + "ha solicitado un nuevo viaje.";
+	    notificacion.setDestinatario(destinatario);
+	    notificacion.setVisto(false);
+	    notificacion.sendEmail(subject, msg);
+	    
+	    ndao.create(notificacion);
 		vdao.create( viaje );
 		
 		resp.sendRedirect( req.getContextPath() + "/HomeServlet?email=" + viaje.getViajero().getEmail() );

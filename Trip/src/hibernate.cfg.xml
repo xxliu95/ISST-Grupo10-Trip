@@ -16,6 +16,7 @@
 		<property name="hbm2ddl.auto">update</property>
 		<mapping class="es.upm.dit.isst.trip.model.Empleado" />
 		<mapping class="es.upm.dit.isst.trip.model.Factura" />
+		<mapping class="es.upm.dit.isst.trip.model.Notificacion" />
 		<mapping class="es.upm.dit.isst.trip.model.Reembolso" />
 		<mapping class="es.upm.dit.isst.trip.model.Reintegro" />
 		<mapping class="es.upm.dit.isst.trip.model.Viaje" />
