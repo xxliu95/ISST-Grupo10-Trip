@@ -55,14 +55,14 @@
 					<div class="col-12">
 						<label for="exampleFormControlInput1">Email</label> 
 						<input
-							type="email" class="form-control" name="email" id="exampleFormControlInput1"
-							value="${empleado.email}" disabled/>
+							required type="email" class="form-control" name="email" id="exampleFormControlInput1" value="${empleado.email}"/>
+							<!-- value="${empleado.email}" disabled/> -->
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="col-sm-12">
 						<label for="exampleFormControlInput1">Nombre</label> <input value="${empleado.name}"
-							type="text" class="form-control"  disabled/>
+							required type="text" class="form-control"/>
 					</div>
 				</div>
 
@@ -155,14 +155,14 @@
 				<div class="form-row">
 					<div class="col-sm-6">
 						<div class="form-group">
-							<label>Periodo inicio</label> <input type="date" name="finicio"
+							<label>Fecha inicio</label> <input required type="date" name="finicio"
 								max="3000-12-31" min="1000-01-01" class="form-control"/>
 						</div>
 					</div>
 
 					<div class="col-sm-6">
 						<div class="form-group">
-							<label>Periodo fin</label> <input type="date" name="ffin"
+							<label>Fecha fin</label> <input required type="date" name="ffin"
 								min="1000-01-01" max="3000-12-31" class="form-control"/>
 
 						</div>
@@ -182,11 +182,8 @@
 				<div class="form-row">
 					<div class="col-sm-12">
 						<label for="exampleFormControlTextarea1">Objeto del viaje</label>
-						<textarea class="form-control" name="descripcion" id="exampleFormControlTextarea1"
-							rows="3">
-							
-				
-                </textarea>
+						<textarea class="form-control" name="descripcion" required id="exampleFormControlTextarea1" rows="3">
+						</textarea>
 					</div>
 				</div>
 				<div>
@@ -197,9 +194,8 @@
 					<div class="col-sm-12">
 						<label for="exampleFormControlTextarea1">Exponga aquí los
 							gastos previstos del viaje</label>
-						<textarea class="form-control" id="exampleFormControlTextarea1"
-							rows="3">
-                </textarea>
+						<textarea class="form-control" id="exampleFormControlTextarea1" rows="3">
+						</textarea>
 					</div>
 				</div>
 
@@ -208,8 +204,8 @@
 						<label for="inputEmail3" class="col-form-label">Gastos previstos</label>
 					</div>
 					<div class="col-sm-8">
-						<input type="number" name="presupuesto" value="1000" min="0" step="0.01"
-							data-number-to-fixed="2" data-number-stepfactor="100"
+						<input type="number" name="presupuesto" min="0" step="0.01"
+							required data-number-to-fixed="2" data-number-stepfactor="100"
 							class="form-control currency" id="c2" />
 					</div>
 				</div>
@@ -217,8 +213,7 @@
 				<div class="form-row">
 					<span class="col-6"></span>
 					<a type="button" class="col-3 btn" href="HomeServlet?email=${empleado.email}">Cancelar</a>		
-					<button type="submit" class="col-3 btn btn-aceptar"
-						>Guardar cambios</button>
+					<button type="submit" class="col-3 btn btn-aceptar">Guardar cambios</button>
 				</div>
 				
 			</form>

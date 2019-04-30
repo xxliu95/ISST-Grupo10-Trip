@@ -55,14 +55,14 @@
 					<div class="col-12">
 						<label for="exampleFormControlInput1">Email</label> 
 						<input
-							type="email" class="form-control" name="email" id="exampleFormControlInput1" value="${empleado.email}"/>
+							required type="email" class="form-control" name="email" id="exampleFormControlInput1" value="${empleado.email}"/>
 							<!-- value="${empleado.email}" disabled/> -->
 					</div>
 				</div>
 				<div class="form-row">
 					<div class="col-sm-12">
 						<label for="exampleFormControlInput1">Nombre</label> <input value="${empleado.name}"
-							type="text" class="form-control"/>
+							required type="text" class="form-control"/>
 					</div>
 				</div>
 
@@ -155,14 +155,14 @@
 				<div class="form-row">
 					<div class="col-sm-6">
 						<div class="form-group">
-							<label>Fecha inicio</label> <input type="date" name="finicio"
+							<label>Fecha inicio</label> <input required type="date" name="finicio"
 								max="3000-12-31" min="1000-01-01" class="form-control"/>
 						</div>
 					</div>
 
 					<div class="col-sm-6">
 						<div class="form-group">
-							<label>Fecha fin</label> <input type="date" name="ffin"
+							<label>Fecha fin</label> <input required type="date" name="ffin"
 								min="1000-01-01" max="3000-12-31" class="form-control"/>
 
 						</div>
@@ -182,7 +182,7 @@
 				<div class="form-row">
 					<div class="col-sm-12">
 						<label for="exampleFormControlTextarea1">Objeto del viaje</label>
-						<textarea class="form-control" name="descripcion" id="exampleFormControlTextarea1" rows="3">
+						<textarea class="form-control" name="descripcion" required id="exampleFormControlTextarea1" rows="3">
 						</textarea>
 					</div>
 				</div>
@@ -205,7 +205,7 @@
 					</div>
 					<div class="col-sm-8">
 						<input type="number" name="presupuesto" min="0" step="0.01"
-							data-number-to-fixed="2" data-number-stepfactor="100"
+							required data-number-to-fixed="2" data-number-stepfactor="100"
 							class="form-control currency" id="c2" />
 					</div>
 				</div>

@@ -65,15 +65,16 @@ public class CrearViajeServlet extends HttpServlet{
 		viaje.setDestino(destino);
 		viaje.setViajero(empleado);
 		
+	    //Email para notificar al encargado
 	    Notificacion notificacion = new Notificacion();
-	    
 	    String destinatario = viaje.getEmpleado().getSuperior().getEmail();
 	    String subject = "TRIP - Nueva solicitud de viaje";
-	    String msg = empleado.getName() + "  " + email + "ha solicitado un nuevo viaje.";
+	    String msg = empleado.getName() + "  " + email + " ha solicitado un nuevo viaje.";
 	    notificacion.setDestinatario(destinatario);
 	    notificacion.setVisto(false);
 	    notificacion.sendEmail(subject, msg);
-	    
+	    notificacion.setNotificado(empleado);
+	    	    
 	    ndao.create(notificacion);
 		vdao.create( viaje );
 		
