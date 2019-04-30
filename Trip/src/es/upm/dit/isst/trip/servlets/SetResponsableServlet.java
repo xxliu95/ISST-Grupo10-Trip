@@ -12,6 +12,10 @@ import es.upm.dit.isst.trip.dao.EmpleadoDAO;
 import es.upm.dit.isst.trip.dao.EmpleadoDAOImplementation;
 import es.upm.dit.isst.trip.model.Empleado;
 
+/**
+ * Servlet implementation class SetResponsableServlet
+ */
+
 @WebServlet("/SetResponsableServlet")
 public class SetResponsableServlet extends HttpServlet {
 	@Override

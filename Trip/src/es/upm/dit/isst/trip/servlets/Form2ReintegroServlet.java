@@ -15,7 +15,7 @@ import es.upm.dit.isst.trip.model.Notificacion;
 import es.upm.dit.isst.trip.model.Viaje;
 
 /**
- * Servlet implementation class ReintegroServlet
+ * Servlet implementation class Form2ReintegroServlet
  */
 @WebServlet("/Form2ReintegroServlet")
 public class Form2ReintegroServlet extends HttpServlet {
@@ -26,15 +26,15 @@ public class Form2ReintegroServlet extends HttpServlet {
 		Viaje viaje = vdao.read(Integer.parseInt(nViaje));
 		viaje.setStatus(3);
 		
-	    //Email para notificar al encargado
+	    //Email para notificar al encargado de una solicitud de reintegro
 	    Notificacion notificacion = new Notificacion();
-	    String destinatario = viaje.getEmpleado().getSuperior().getEmail();
+	    String remitente = viaje.getViajero().getEmail();
 	    String subject = "TRIP - Nueva solicitud de reintegro";
 	    String msg = viaje.getViajero().getName() + "  " + viaje.getViajero().getEmail() + " ha solicitado el reintegro del viaje numero " + viaje.getnViaje();
-	    notificacion.setDestinatario(destinatario);
+	    notificacion.setRemitente(remitente);
 	    notificacion.setVisto(false);
+	    notificacion.setNotificado(viaje.getViajero().getSuperior());
 	    notificacion.sendEmail(subject, msg);
-	    notificacion.setNotificado(viaje.getViajero());
 	    	    
 	    ndao.create(notificacion);
 	    

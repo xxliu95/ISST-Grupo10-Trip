@@ -14,10 +14,17 @@ import javax.servlet.http.HttpServletResponse;
 
 import es.upm.dit.isst.trip.dao.EmpleadoDAO;
 import es.upm.dit.isst.trip.dao.EmpleadoDAOImplementation;
+import es.upm.dit.isst.trip.dao.NotificacionDAO;
+import es.upm.dit.isst.trip.dao.NotificacionDAOImplementation;
 import es.upm.dit.isst.trip.dao.ViajeDAO;
 import es.upm.dit.isst.trip.dao.ViajeDAOImplementation;
 import es.upm.dit.isst.trip.model.Empleado;
+import es.upm.dit.isst.trip.model.Notificacion;
 import es.upm.dit.isst.trip.model.Viaje;
+
+/**
+ * Servlet implementation class HomeEncargadoServlet
+ */
 
 @WebServlet({ "/HomeEncargadoServlet" })
 public class HomeEncargadoServlet extends HttpServlet {
@@ -25,6 +32,8 @@ public class HomeEncargadoServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String email = req.getParameter("email");
 		EmpleadoDAO edao =  EmpleadoDAOImplementation.getInstance();
+		NotificacionDAO ndao = NotificacionDAOImplementation.getInstance();
+
 		Empleado responsable = edao.read(email);
 		req.setAttribute("responsable", responsable);
 		Collection<Empleado> subordinados = responsable.getSubordinados();
@@ -43,6 +52,18 @@ public class HomeEncargadoServlet extends HttpServlet {
 				viajes.addAll(empleado.getViajes());
 		}
 		//parametro para sacar las listas de los empleados
+		
+		Collection<Notificacion> notificaciones = ndao.readAll();
+		
+		ArrayList<Notificacion> notSinLeer = new ArrayList<Notificacion>();
+		
+		for (Notificacion notif: notificaciones) {
+			if (!notif.isVisto() && notif.getNotificado().getEmail().equals(email)) {
+				notSinLeer.add(notif);
+			}
+		}
+		
+		req.setAttribute("notificaciones", notSinLeer);
 		req.setAttribute("viajesEmpleados", viajes);
 		getServletContext().getRequestDispatcher( "/HomeEncargado.jsp" ).forward( req, resp );	
 	}

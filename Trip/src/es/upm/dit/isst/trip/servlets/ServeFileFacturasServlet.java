@@ -17,6 +17,7 @@ import es.upm.dit.isst.trip.model.Factura;
 /**
  * Servlet implementation class ServeFileFacturasServlet
  */
+
 @WebServlet("/ServeFileFacturasServlet")
 public class ServeFileFacturasServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

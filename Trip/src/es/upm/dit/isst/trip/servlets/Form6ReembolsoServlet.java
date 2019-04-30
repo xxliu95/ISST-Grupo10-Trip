@@ -15,7 +15,7 @@ import es.upm.dit.isst.trip.model.Notificacion;
 import es.upm.dit.isst.trip.model.Viaje;
 
 /**
- * Servlet implementation class ReintegroServlet
+ * Servlet implementation class Form6ReembolsoServlet
  */
 @WebServlet("/Form6ReembolsoServlet")
 public class Form6ReembolsoServlet extends HttpServlet {
@@ -26,16 +26,16 @@ public class Form6ReembolsoServlet extends HttpServlet {
 		Viaje viaje = vdao.read(Integer.parseInt(nViaje));
 		viaje.setStatus(7);
 		
-		//Email para notificar al encargado
+		//Email para notificar al empleado que se ha aceptado su reembolso
 	    Notificacion notificacion = new Notificacion();
-	    String destinatario = viaje.getEmpleado().getEmail();
+	    String remitente = viaje.getViajero().getSuperior().getEmail();
 	    String subject = "TRIP - Reembolso aceptado";
 	    String msg = viaje.getViajero().getSuperior().getName() + "  " + viaje.getViajero().getSuperior().getEmail() + " ha aceptado el reembolso del viaje numero " + viaje.getnViaje();
-	    notificacion.setDestinatario(destinatario);
+	    notificacion.setRemitente(remitente);
 	    notificacion.setVisto(false);
-	    notificacion.sendEmail(subject, msg);
 	    notificacion.setNotificado(viaje.getViajero());
-	    	    
+	    notificacion.sendEmail(subject, msg);
+
 	    ndao.create(notificacion);
 	    
 		vdao.update(viaje);

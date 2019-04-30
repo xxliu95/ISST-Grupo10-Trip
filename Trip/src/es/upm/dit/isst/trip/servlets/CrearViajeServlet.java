@@ -23,6 +23,9 @@ import es.upm.dit.isst.trip.model.Viaje;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
+/**
+ * Servlet implementation class CrearViajeServlet
+ */
 
 @WebServlet("/CrearViajeServlet")
 public class CrearViajeServlet extends HttpServlet{
@@ -67,13 +70,13 @@ public class CrearViajeServlet extends HttpServlet{
 		
 	    //Email para notificar al encargado
 	    Notificacion notificacion = new Notificacion();
-	    String destinatario = viaje.getEmpleado().getSuperior().getEmail();
+	    String remitente = empleado.getEmail();
 	    String subject = "TRIP - Nueva solicitud de viaje";
 	    String msg = empleado.getName() + "  " + email + " ha solicitado un nuevo viaje.";
-	    notificacion.setDestinatario(destinatario);
+	    notificacion.setRemitente(remitente);
 	    notificacion.setVisto(false);
+	    notificacion.setNotificado(viaje.getViajero().getSuperior());
 	    notificacion.sendEmail(subject, msg);
-	    notificacion.setNotificado(empleado);
 	    	    
 	    ndao.create(notificacion);
 		vdao.create( viaje );

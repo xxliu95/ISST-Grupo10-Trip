@@ -14,6 +14,7 @@ import es.upm.dit.isst.trip.model.Empleado;
 /**
  * Servlet implementation class ServeFileServlet
  */
+
 @WebServlet("/ServeFileServlet")
 public class ServeFileServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

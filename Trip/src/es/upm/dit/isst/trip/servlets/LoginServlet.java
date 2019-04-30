@@ -16,6 +16,10 @@ import org.apache.shiro.subject.Subject;
 import es.upm.dit.isst.trip.dao.EmpleadoDAO;
 import es.upm.dit.isst.trip.dao.EmpleadoDAOImplementation;
 
+/**
+ * Servlet implementation class LoginServlet
+ */
+
 @WebServlet({ "/LoginServlet", "/" })
 public class LoginServlet extends HttpServlet {
 	@Override

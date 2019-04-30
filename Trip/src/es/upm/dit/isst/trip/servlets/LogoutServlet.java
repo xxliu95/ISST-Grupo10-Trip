@@ -11,6 +11,10 @@ import javax.servlet.http.HttpServletResponse;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.subject.Subject;
 
+/**
+ * Servlet implementation class LogoutServlet
+ */
+
 @WebServlet("/LogoutServlet")
 public class LogoutServlet extends HttpServlet {
 	

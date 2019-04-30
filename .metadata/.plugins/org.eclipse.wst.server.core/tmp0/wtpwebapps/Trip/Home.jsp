@@ -24,7 +24,8 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-	
+
+
 <link href="css/login.css" rel="stylesheet" type="text/css">
 <link href="css/style.css" rel="stylesheet" type="text/css">
 
@@ -82,28 +83,63 @@
 
 	<shiro:user>
 		
+	<!-- Navigation -->
+		<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#"
+					style="color: #00adb5; letter-spacing: 3px">Gestión de viajes</a>
+					<div class="dropdown navbar-left">
+         		 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-bell"></i>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#" style="color: #00adb5; letter-spacing: 3px">Gestión de viajes</a>
-            <button
-            class="navbar-toggler"
-            type="bottom"
-            data-toggle="collapse"
-            data-target="#navbarResponsive"
-            >
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="LogoutServlet">Cerrar sesión</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
+         		 </a>
+          			<ul class="dropdown-menu notify-drop">
+           				 <div class="notify-drop-title">
+            				<div class="row">
+            					<span class="col-1"></span>
+            					<div class="col-6">Notificaciones</div>
+            				</div>
+            			</div>
+		            <div class="drop-content">
+		            <c:if test="${fn:length(notificaciones) == 0}">
+		            <li>
+		            		<p class="col-12">No hay notificaciones</p>
+		            	</li>
+		            </c:if>
+		            <c:forEach items="${notificaciones}" var="notificacioni">
+		            	<li>
+								<div class="col-12">
+								<div class="row">
+								<div class="col-9">
+									<i class="fa fa-dot-circle-o"></i><p><b>${notificacioni.subject}</b></p>
+								</div>
+								<div class="col-3">
+										<form action="NotificacionVistoServlet" method="post" class="col-3"'>
+										<input type="hidden" name="nNotificacion" value="${notificacioni.nNotificacion}" />
+										<button type="submit" class="btn"><i class="fas fa-times"></i></button>
+									</form>								
+								</div>	
+								</div>	            		
+		            		<hr>
+		            		<p class="col-12">${notificacioni.msg}</p>
+		            		</div>
+		            		
+		            	</li>
+		            </c:forEach>
+		            </div>
+		          </ul>
+		        </div>
+				<button class="navbar-toggler" type="bottom" data-toggle="collapse"
+					data-target="#navbarResponsive">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item"><a class="nav-link" href="LogoutServlet">Cerrar
+								sesión</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>	    
 
 <!--- Card Profile -->
 	<div class="contenedor" style="margin-top: 4%">
@@ -185,6 +221,8 @@
 									<th class="hidden-xs">ID</th>
 									<th>Viaje</th>
 									<th>Información</th>
+									<th>Estado</th>									
+									<th>Acción</th>
 								</tr>
 							</thead>
 							<c:forEach items="${empleado.viajes}" var="viajei">

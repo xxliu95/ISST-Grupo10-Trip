@@ -99,15 +99,6 @@ public class Viaje implements Serializable{
 	public void setPresupuesto(double presupuesto) {
 		this.presupuesto = presupuesto;
 	}
-
-
-	public Empleado getEmpleado() {
-		return viajero;
-	}
-
-	public void setEmpleado(Empleado empleado) {
-		this.viajero = empleado;
-	}
 	
 	public String getDestino() {
 		return destino;

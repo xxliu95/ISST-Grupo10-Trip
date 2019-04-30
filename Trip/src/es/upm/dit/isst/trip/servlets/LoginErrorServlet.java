@@ -17,6 +17,10 @@ import es.upm.dit.isst.trip.dao.EmpleadoDAO;
 import es.upm.dit.isst.trip.dao.EmpleadoDAOImplementation;
 import es.upm.dit.isst.trip.model.Empleado;
 
+/**
+ * Servlet implementation class LoginErrorServlet
+ */
+
 @WebServlet({ "/LoginErrorServlet" })
 public class LoginErrorServlet extends HttpServlet {
 	@Override

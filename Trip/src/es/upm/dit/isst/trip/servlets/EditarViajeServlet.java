@@ -15,6 +15,10 @@ import es.upm.dit.isst.trip.dao.ViajeDAOImplementation;
 import es.upm.dit.isst.trip.model.Empleado;
 import es.upm.dit.isst.trip.model.Viaje;
 
+/**
+ * Servlet implementation class EditarViajeServlet
+ */
+
 @WebServlet("/EditarViajeServlet")
 public class EditarViajeServlet extends HttpServlet{
 	

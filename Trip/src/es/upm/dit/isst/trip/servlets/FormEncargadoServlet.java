@@ -15,7 +15,7 @@ import es.upm.dit.isst.trip.model.Notificacion;
 import es.upm.dit.isst.trip.model.Viaje;
 
 /**
- * Servlet implementation class Form2EncargadoServlet
+ * Servlet implementation class FormEncargadoServlet
  */
 @WebServlet("/FormEncargadoServlet")
 public class FormEncargadoServlet extends HttpServlet {
@@ -26,16 +26,16 @@ public class FormEncargadoServlet extends HttpServlet {
 		Viaje viaje = vdao.read(Integer.parseInt(nViaje));
 		viaje.setStatus(2);
 		
-		//Email para notificar al encargado
+		//Email para notificar al empleada de que su viaje ha sido aceptado
 	    Notificacion notificacion = new Notificacion();
-	    String destinatario = viaje.getEmpleado().getEmail();
+	    String remitente = viaje.getViajero().getSuperior().getEmail();
 	    String subject = "TRIP - Viaje aceptado";
-	    String msg = viaje.getViajero().getSuperior().getName() + "  " + viaje.getViajero().getSuperior().getEmail() + " ha aceptado tu nuevo viaje";
-	    notificacion.setDestinatario(destinatario);
+	    String msg = viaje.getViajero().getSuperior().getName() + "  " + remitente + " ha aceptado tu nuevo viaje";
+	    notificacion.setRemitente(remitente);
 	    notificacion.setVisto(false);
-	    notificacion.sendEmail(subject, msg);
 	    notificacion.setNotificado(viaje.getViajero());
-	    	    
+	    notificacion.sendEmail(subject, msg);
+
 	    ndao.create(notificacion);
 	    
 		vdao.update(viaje);

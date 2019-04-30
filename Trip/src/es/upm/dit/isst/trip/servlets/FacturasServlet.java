@@ -17,6 +17,7 @@ import es.upm.dit.isst.trip.model.Viaje;
 /**
  * Servlet implementation class FacturasServlet
  */
+
 @WebServlet("/FacturasServlet")
 public class FacturasServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

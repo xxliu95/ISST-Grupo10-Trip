@@ -14,6 +14,10 @@ import es.upm.dit.isst.trip.dao.EmpleadoDAO;
 import es.upm.dit.isst.trip.dao.EmpleadoDAOImplementation;
 import es.upm.dit.isst.trip.model.Empleado;
 
+/**
+ * Servlet implementation class CreateEmpleadoServlet
+ */
+
 @WebServlet("/CreateEmpleadoServlet")
 public class CreateEmpleadoServlet extends HttpServlet {
 	@Override

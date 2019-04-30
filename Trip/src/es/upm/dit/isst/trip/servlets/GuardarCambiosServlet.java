@@ -15,6 +15,10 @@ import es.upm.dit.isst.trip.dao.ViajeDAO;
 import es.upm.dit.isst.trip.dao.ViajeDAOImplementation;
 import es.upm.dit.isst.trip.model.Viaje;
 
+/**
+ * Servlet implementation class GuardarCambiosServlet
+ */
+
 @WebServlet("/GuardarCambiosServlet")
 public class GuardarCambiosServlet extends HttpServlet{
 

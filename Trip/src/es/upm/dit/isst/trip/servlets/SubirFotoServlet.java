@@ -19,6 +19,7 @@ import es.upm.dit.isst.trip.model.Empleado;
 /**
  * Servlet implementation class SubirFotoServlet
  */
+
 @WebServlet("/SubirFotoServlet")
 @MultipartConfig 
 public class SubirFotoServlet extends HttpServlet {
