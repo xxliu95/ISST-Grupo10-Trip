@@ -153,6 +153,10 @@
 											<input type="hidden" name="nViaje" value="${viajei.nViaje}" />
 											<button class="btn btn-aceptar" type="submit"><p class="ptext">Aceptar Reintegro</p></button>
 										</form>
+										<form action="Form4ReintegroServletDenegar" method="post">
+											<input type="hidden" name="nViaje" value="${viajei.nViaje}" />
+											<button class="btn btn-aceptar" type="submit"><p class="ptext">Denegar Reintegro</p></button>
+										</form>
 									</c:if></td>
 								</c:if>
 							</tr>

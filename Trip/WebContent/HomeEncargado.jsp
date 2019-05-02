@@ -197,17 +197,30 @@
 											<input type="hidden" name="nViaje" value="${viajei.nViaje}" />
 											<button type="submit">Aceptar viaje</button>
 										</form>
+										<form action="FormEncargadoServletDenegar" method="post">
+											<input type="hidden" name="nViaje" value="${viajei.nViaje}"/>
+											<input type="hidden" name="email" value="${viajei.viajero.superior.email}"/>
+											<button type="submit">Denegar viaje</button>
+										</form>
 									</c:if></td>
 								<td><c:if test="${viajei.status == 3}">
 										<form action="Form3ReintegroServlet" method="post">
 											<input type="hidden" name="nViaje" value="${viajei.nViaje}" />
 											<button type="submit">AceptarReintegro</button>
 										</form>
+										<form action="Form3ReintegroServletDenegar" method="post">
+											<input type="hidden" name="nViaje" value="${viajei.nViaje}" />
+											<button type="submit">Denegar Reintegro</button>
+										</form>
 									</c:if></td>
 								<td><c:if test="${viajei.status == 6}">
 									<form action="Form6ReembolsoServlet" method="post">
 										<input type="hidden" name="nViaje" value="${viajei.nViaje}" />
 										<button type="submit">Aceptar Reembolso</button>
+									</form>
+									<form action="Form6ReembolsoServletDenegar" method="post">
+										<input type="hidden" name="nViaje" value="${viajei.nViaje}" />
+										<button type="submit">Denegar Reembolso</button>
 									</form>
 								</c:if></td>
 								<td>

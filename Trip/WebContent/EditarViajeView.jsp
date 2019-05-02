@@ -151,14 +151,14 @@
 					<div class="col-sm-6">
 						<div class="form-group">
 							<label>Fecha inicio</label> <input type="date" name="finicio"
-								max="3000-12-31" min="1000-01-01" class="form-control" value="${viaje.finicio}" disabled/>
+								max="3000-12-31" min="1000-01-01" class="form-control" value="${viaje.finicio}"/>
 						</div>
 					</div>
 
 					<div class="col-sm-6">
 						<div class="form-group">
 							<label>Fecha fin</label> <input type="date" name="ffin"
-								min="1000-01-01" max="3000-12-31" class="form-control" value="${viaje.ffin}" disabled/>
+								min="1000-01-01" max="3000-12-31" class="form-control" value="${viaje.ffin}"/>
 
 						</div>
 					</div>

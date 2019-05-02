@@ -35,14 +35,14 @@ public class CrearViajeServlet extends HttpServlet{
 		String descripcion = req.getParameter( "descripcion" );
 		Date finicio = null;
 		try {
-			finicio = new SimpleDateFormat("dd/MM/yyyy").parse(req.getParameter( "finicio" ));
+			finicio = new SimpleDateFormat("yyyy-MM-dd").parse(req.getParameter( "finicio" ));
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		Date ffin = null;
 		try {
-			ffin = new SimpleDateFormat("dd/MM/yyyy").parse(req.getParameter( "ffin" ));
+			ffin = new SimpleDateFormat("yyyy-MM-dd").parse(req.getParameter( "ffin" ));
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

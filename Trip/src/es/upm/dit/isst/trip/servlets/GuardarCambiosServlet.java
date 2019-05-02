@@ -30,21 +30,21 @@ public class GuardarCambiosServlet extends HttpServlet{
 		double presupuesto = Double.parseDouble(req.getParameter("presupuesto"));
 		String destino = req.getParameter("destino");
 		String descripcion = req.getParameter("descripcion");
-		/*
+		
 		Date finicio = null;
 		try {
-			finicio = new SimpleDateFormat("dd/MM/yyyy").parse(req.getParameter( "finicio" ));
+			finicio = new SimpleDateFormat("yyyy-MM-dd").parse(req.getParameter( "finicio" ));
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		Date ffin = null;
 		try {
-			ffin = new SimpleDateFormat("dd/MM/yyyy").parse(req.getParameter( "ffin" ));
+			ffin = new SimpleDateFormat("yyyy-MM-dd").parse(req.getParameter( "ffin" ));
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}*/
+		}
 		
 		ViajeDAO vdao = ViajeDAOImplementation.getInstance();
 		Viaje viaje = vdao.read(nViaje);
@@ -52,6 +52,8 @@ public class GuardarCambiosServlet extends HttpServlet{
 		viaje.setDescripcion(descripcion);
 		viaje.setDestino(destino);
 		viaje.setPresupuesto(presupuesto);
+		viaje.setFinicio(finicio);
+		viaje.setFfin(ffin);
 		
 		vdao.update(viaje);
 		

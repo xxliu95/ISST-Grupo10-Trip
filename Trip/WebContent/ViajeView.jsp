@@ -217,6 +217,45 @@
 			</div>
 			<span class="col-1"></span>
 			<div class="col-3">
+
+					<c:choose>
+						<c:when test="${viaje.status == 2}">
+							<form action="Form5ReembolsoServlet" method="post">
+								<input type="hidden" name="nViaje" value="${viaje.nViaje}" />
+								<button type="submit" class="btn btn-sm btn-primary btn-create"
+									style="margin-top: 8%">Solicitar Reembolso</button>
+							</form>
+						</c:when>
+						<c:otherwise>
+							<button disabled class="btn btn-sm btn-secondary btn-create"
+								style="margin-top: 8%">Solicitar Reembolso</button>
+						</c:otherwise>
+					</c:choose>
+
+				</div>
+				<span class="col-1"></span>
+
+				<div class="col-3">
+					<c:choose>
+						<c:when test="${viaje.status == 2 || viaje.status == 7}">
+							<form action="Form2ReintegroServlet" method="post">
+								<input type="hidden" name="nViaje" value="${viaje.nViaje}" />
+								<button type="submit" class="btn btn-sm btn-primary btn-create"
+									style="margin-top: 8%">Solicitar Reintegro</button>
+							</form>
+						</c:when>
+						<c:otherwise>
+							<button disabled class="btn btn-sm btn-secondary btn-create"
+								style="margin-top: 8%">Solicitar Reintegro</button>
+						</c:otherwise>
+					</c:choose>
+
+
+
+				</div>
+			<!--  
+			
+			<div class="col-3">
 			<c:choose>
 				<c:when test="${viaje.status == 2}">
 					<form action="Form2ReintegroServlet" method="post">
@@ -232,11 +271,9 @@
 					style="margin-top: 8%">Solicitar Reintegro</button>
 				</c:otherwise>
 			</c:choose>
-			
-				
+	
 			</div>
 			<span class="col-1"></span>
-			
 			<div class="col-3">
 				<c:choose>
 				<c:when test="${viaje.status == 5}">
@@ -254,6 +291,8 @@
 				</c:otherwise>
 			</c:choose>
 			</div>
+			
+			-->
 		</div>
 	</div>
 	</shiro:user>
