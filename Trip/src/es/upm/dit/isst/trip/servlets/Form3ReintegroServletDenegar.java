@@ -15,7 +15,7 @@ import es.upm.dit.isst.trip.model.Notificacion;
 import es.upm.dit.isst.trip.model.Viaje;
 
 /**
- * Servlet implementation class ReintegroServlet
+ * Servlet implementation class Form3ReintegroServletDenegar
  */
 @WebServlet("/Form3ReintegroServletDenegar")
 public class Form3ReintegroServletDenegar extends HttpServlet {

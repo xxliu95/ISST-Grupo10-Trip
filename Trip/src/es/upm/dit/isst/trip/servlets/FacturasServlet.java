@@ -25,6 +25,7 @@ public class FacturasServlet extends HttpServlet {
 		String nViaje = req.getParameter("nViaje");
 		Viaje viaje = vdao.read(Integer.valueOf(nViaje));
 		req.setAttribute("facturas", viaje.getFacturas());
+		req.setAttribute("viaje", viaje);
 		getServletContext().getRequestDispatcher( "/FacturasView.jsp" ).forward( req, resp );
 	}
 

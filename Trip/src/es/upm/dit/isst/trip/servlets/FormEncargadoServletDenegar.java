@@ -15,6 +15,9 @@ import es.upm.dit.isst.trip.dao.ViajeDAOImplementation;
 import es.upm.dit.isst.trip.model.Notificacion;
 import es.upm.dit.isst.trip.model.Viaje;
 
+/**
+ * Servlet implementation class FormEncargadoServletDenegar
+ */
 @WebServlet("/FormEncargadoServletDenegar")
 public class FormEncargadoServletDenegar extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
