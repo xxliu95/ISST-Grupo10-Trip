@@ -82,6 +82,12 @@
             >
             <span class="navbar-toggler-icon"></span>
         </button>
+        <form action="ViajeServlet" method="get">
+        	<input type="hidden" name="nViaje" value="${viaje.nViaje }"/>
+        	<button type = "submit">Volver</button>
+        </form>
+        
+	
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
@@ -91,16 +97,15 @@
         </div>
     </div>
 </nav>
-
-
 		<!-- Facturas con el boton de descarga -->
 
-					<div class="panel-body">
+					<div class="panel-body" style="margin-top: 75px; margin-left: 5%; margin-right: 5%">
 						<table class="table table-striped table-bordered table-list">
 							<thead>
 								<tr>
 									<th class="hidden-xs">ID</th>
 									<th>Facturas adjuntadas</th>
+									<th>Acción</th>
 								</tr>
 							</thead>
 							<c:forEach items="${facturas}" var="facturai">
@@ -125,6 +130,37 @@
 	</div>
 	
 	</shiro:user>
+	
+	<shiro:hasRole name="employer">
+        <!-- Navigation -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#" style="color: #00adb5; letter-spacing: 3px">Gestión de viajes</a>
+            <button
+            class="navbar-toggler"
+            type="bottom"
+            data-toggle="collapse"
+            data-target="#navbarResponsive"
+            >
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <form action="HomeEncargadoServlet" method="get">
+        	<input type="hidden" name="email" value="${viaje.viajero.superior.email }"/>
+        	<button type = "submit">Volver</button>
+        </form>
+        
+	
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="LogoutServlet">Cerrar sesión</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+		
+	</shiro:hasRole>
 	
 </body>
 </html>

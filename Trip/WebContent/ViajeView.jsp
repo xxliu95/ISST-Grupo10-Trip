@@ -149,6 +149,13 @@
 											class="btn btn-sm btn-primary btn-create"
 											style="margin-top: 8%">Editar solicitud</button>
 									</form>
+									
+									
+									<form action="FacturasServlet" method="post">
+										<input type="hidden" name="nViaje" value="${viaje.nViaje}" />
+										<button type="submit" class="btn btn-sm btn-primary btn-create">Ver facturas</button>
+									</form>
+									
 									<a type="button" class="btn btn-sm btn-primary btn-create" href="HomeServlet?email=${viaje.viajero.email}">Volver</a>
 								</div>
 							</div>

@@ -148,7 +148,14 @@
 								<td>Fecha inicio: ${viajei.finicio } <br>Fecha fin:
 									${viajei.ffin } <br>Descripción: ${viajei.descripcion } <br>
 								</td>
-								<td><c:if test="${viajei.status == 4}">
+								<td>
+								<c:if test="${viajei.facturas.isEmpty() == false }">
+									<form action="FacturasServlet" method="post">
+										<input type="hidden" name="nViaje" value="${viajei.nViaje}" />
+										<button type="submit" class="btn btn-aceptar">Ver facturas</button>
+									</form>
+								</c:if>
+								<c:if test="${viajei.status == 4}">
 										<form action="Form4ReintegroServlet" method="post">
 											<input type="hidden" name="nViaje" value="${viajei.nViaje}" />
 											<button class="btn btn-aceptar" type="submit"><p class="ptext">Aceptar Reintegro</p></button>
