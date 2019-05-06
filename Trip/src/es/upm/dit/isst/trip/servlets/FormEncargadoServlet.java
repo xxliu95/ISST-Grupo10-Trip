@@ -26,7 +26,7 @@ public class FormEncargadoServlet extends HttpServlet {
 		Viaje viaje = vdao.read(Integer.parseInt(nViaje));
 		viaje.setStatus(2);
 		
-		//Email para notificar al empleada de que su viaje ha sido aceptado
+		//Email para notificar al empleado de que su viaje ha sido aceptado
 	    Notificacion notificacion = new Notificacion();
 	    String remitente = viaje.getViajero().getSuperior().getEmail();
 	    String subject = "TRIP - Viaje aceptado";
