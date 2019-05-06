@@ -72,7 +72,7 @@ Ejecuta en cmd.exe:
 ```
 java -jar <rutacompleta>/h2-1.4.197.jar
 ```
-Se abrirá una ventana en un navegador. Comprueba que la ruta es `jdbc:h2:tcp://localhost/~/isst` y el usuario y contraseña son `sa` y `sa` respectivamente.
+Se abrirá una ventana en un navegador. Comprueba que la ruta es `jdbc:h2:tcp://localhost/~/trip` y el usuario y contraseña son `sa` y `sa` respectivamente.
 
 ###### 2. Ejecución de la aplicación Web en eclipse
 En Eclipse
