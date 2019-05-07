@@ -141,125 +141,95 @@
 			</div>
 		</nav>	    
 
-<!--- Card Profile -->
-	<div class="contenedor" style="margin-top: 4%">
-		<div class="row" style="line-height: 50px;">
-			<span class="col-2"></span>
-			<div class="col-4">
-				<c:choose>
-					<c:when test="${empleado.foto == null }">
-						<!-- hace falta evitar que no este vacio el archivo -->
-						<form action="SubirFotoServlet" method="post"
-							enctype="multipart/form-data">
-								<div class="row">
-									<div class="col-12 input-group">
-										<div class="custom-file">
-											<input type="hidden" name="email" value="${empleado.email}" />
-											<input type="file" class="form-control-file" name="file"
-												id="exampleFormControlFile1">
-										</div>
-									</div>
-								</div>
-								<div class="col-12">
-									<button type="submit" id="submitbutton"
-										class="btn btn-sm btn-primary btn-create"
-										style="margin-top: 8%">Poner una imagen</button>
-								</div>
-							</form>
-					</c:when>
-					<c:otherwise>
-						<img
-							src="${pageContext.request.contextPath}/ServeFileServlet?email=${empleado.email}"
-							alt="" class=" foto">
-					</c:otherwise>
-				</c:choose>
-			</div>
-			<div class="col-6 details">
-				<blockquote>
-					<h5>${empleado.name}</h5>
-					<small><cite title="Source Title">Empleado <i
-							class="icon-map-marker"></i></cite></small>
-				</blockquote>
-				<p>
-					${empleado.email} <br> ID Empleado: ${empleado.id} <br>
-
-				</p>
-			</div>
-		</div>
-
-
-		<!-- Solicitar viaje  -->
-		<div class="solicitar" style="margin-top: 1%">
+		<!--- Card Profile -->
+		<div class="container" style="margin-top: 65px">
 			<div class="row border">
-				<div class="col-md-10 col-md-offset-1">
-					<div class="panel panel-default panel-table">
-						<div class="panel-heading">
-							<div class="row">
-								<div class="col col-auto">
-									<h3 class="panel-title">Solicitar un viaje</h3>
-								</div>
-								<div class="col col-auto text-right">
-									<form action="SolicitarViajeServlet" method="get">
-										<input type="hidden" name="email" value="${empleado.email}" />
-										<button type="submit"
-											class="btn btn-sm btn-primary btn-create"
-											style="margin-top: 8%">Solicitar</button>
-									</form>
-								</div>
-							</div>
-						</div>
-					</div>
-
-
-
-					<!-- List table -->
-
-					<div class="panel-body">
-						<table class="table table-striped table-bordered table-list">
-							<thead>
-								<tr>
-									<th class="hidden-xs">ID</th>
-									<th>Viaje</th>
-									<th>Información</th>
-									<th>Estado</th>									
-									<th>Acción</th>
-								</tr>
-							</thead>
-							<c:forEach items="${empleado.viajes}" var="viajei">
-								<tbody>
-									<tr>
-										<td class="hidden-xs">${viajei.nViaje}</td>
-										<td>${viajei.destino }</td>
-										<td>Fecha inicio: ${viajei.finicio } <br>Fecha fin:
-											${viajei.ffin } <br>Descripción: ${viajei.descripcion }
-											<br>
-										</td>
-										<td><c:choose>
-												<c:when test="${viajei.status == 1 }">Viaje solicitado</c:when>
-												<c:when test="${viajei.status == 2 }">Viaje aceptado</c:when>
-												<c:when test="${viajei.status == 3 }">Solicitando reintegro</c:when>
-												<c:when test="${viajei.status == 4 }">Reintegro aceptado por responsable</c:when>
-												<c:when test="${viajei.status == 5 }">Reintegro aceptado por OCG</c:when>
-												<c:when test="${viajei.status == 6 }">Solicitando reembolso</c:when>
-												<c:when test="${viajei.status == 7 }">Reembolso aceptado</c:when>											
-											</c:choose></td>
-										<td>
-											<form action="ViajeServlet" method="get">
-												<input type="hidden" name="nViaje" value="${viajei.nViaje}" />
-												<button class="btn" type="submit">
-													<i class="fas fa-angle-right fa-3x" style="width: 100px;"></i>
-												</button>
-											</form>
-										</td>
-									</tr>
-								</tbody>
-							</c:forEach>
-						</table>
-					</div>
+				<div class="col-auto img">
+					<c:choose>
+						<c:when test="${empleado.foto == null }">
+							<form action="SubirFotoServlet" method="post"
+								enctype="multipart/form-data">
+								<input type="hidden" name="email" value="${empleado.email}" />
+								<input type="file" name="file">
+								<button type="submit" class="btn btn-sm btn-primary btn-create"
+									style="margin-top: 8%">Poner una imagen</button>
+							</form>
+						</c:when>
+						<c:otherwise>
+							<img
+								src="${pageContext.request.contextPath}/ServeFileServlet?email=${empleado.email}"
+								alt="" class="img-rounded" height="200rem" width="auto"
+								style="padding: 8%">
+						</c:otherwise>
+					</c:choose>
 				</div>
+				<div class="col-auto details">
+					<br>
+					<blockquote>
+						<h5>${empleado.name}</h5>
+						<small><cite title="Source Title"> Empleado<i
+								class="icon-map-marker"></i></cite></small>
+					</blockquote>
+					<p>
+						${empleado.email} <br> ID Empleado: ${empleado.id} <br>
+
+					</p>
+			<!-- Solicitar viaje  -->
+				<p>
+				<form action="SolicitarViajeServlet" method="get">
+					<input type="hidden" name="email" value="${empleado.email}" />
+					<button type="submit" class="btn btn-sm btn-primary btn-create">Solicitar un viaje</button>
+				</form>
+				</p>
+
+				</div>
+
+			</div>
+
+			<!-- List table -->
+
+			<div class="panel-body" style="padding-top:10px;">
+				<table class="table table-striped table-bordered table-list">
+					<thead>
+						<tr>
+							<th class="hidden-xs">ID</th>
+							<th>Viaje</th>
+							<th>Información</th>
+							<th>Estado</th>
+							<th>Acción</th>
+						</tr>
+					</thead>
+					<c:forEach items="${empleado.viajes}" var="viajei">
+						<tbody>
+							<tr>
+								<td class="hidden-xs">${viajei.nViaje}</td>
+								<td>${viajei.destino }</td>
+								<td>Fecha inicio: ${viajei.finicio } <br>Fecha fin:
+									${viajei.ffin } <br>Descripción: ${viajei.descripcion } <br>
+								</td>
+								<td><c:choose>
+										<c:when test="${viajei.status == 1 }">Viaje solicitado</c:when>
+										<c:when test="${viajei.status == 2 }">Viaje aceptado</c:when>
+										<c:when test="${viajei.status == 3 }">Solicitando reintegro</c:when>
+										<c:when test="${viajei.status == 4 }">Reintegro aceptado por responsable</c:when>
+										<c:when test="${viajei.status == 5 }">Reintegro aceptado por OCG</c:when>
+										<c:when test="${viajei.status == 6 }">Solicitando reembolso</c:when>
+										<c:when test="${viajei.status == 7 }">Reembolso aceptado</c:when>
+									</c:choose></td>
+								<td style="text-align: center;">
+									<form action="ViajeServlet" class="align-middle" method="get">
+										<input type="hidden" name="nViaje" value="${viajei.nViaje}" />
+										<button class="btn " type="submit">
+											<i class="fas fa-angle-right fa-3x" style="width: 100px;"></i>
+										</button>
+									</form>
+								</td>
+							</tr>
+						</tbody>
+					</c:forEach>
+				</table>
 			</div>
 		</div>
-	</div>
 	</shiro:user>
 
 </body>

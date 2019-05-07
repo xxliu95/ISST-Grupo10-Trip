@@ -1,4 +1,4 @@
-# ISST-Grupo10-Trip :airplane: :train2: :bus: :car:
+# ISST-Grupo10-Trip
 
 ## Gestión de Viajes en Organizaciones 
 <p>

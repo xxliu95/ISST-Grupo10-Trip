@@ -16,15 +16,32 @@
 
 <!-- Custom fonts for this template -->
 <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-<link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+<link href="vendor/simple-line-icons/css/simple-line-icons.css"
+	rel="stylesheet" type="text/css">
+<link
+	href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic"
+	rel="stylesheet" type="text/css">
 
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-	
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+	integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+	crossorigin="anonymous">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+	integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+	crossorigin="anonymous"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+	crossorigin="anonymous"></script>
+
 <link href="css/login.css" rel="stylesheet" type="text/css">
 <link href="css/style.css" rel="stylesheet" type="text/css">
 
@@ -46,7 +63,8 @@
 				<div class="login-form">
 					<form action="LoginServlet" method="post">
 						<div class="form-group">
-							<input name="email" type="text" class="form-control" placeholder="Email">
+							<input name="email" type="text" class="form-control"
+								placeholder="Email">
 						</div>
 						<div class="form-group">
 							<input name="password" type="password" class="form-control"
@@ -54,17 +72,17 @@
 						</div>
 
 						<button type="submit" class="col-12 btn btn-black">LOGIN</button>
-						<span class="col-12"></span> 
+						<span class="col-12"></span>
 					</form>
 					<form action="RegisterServlet" method="get">
 						<button type="submit" class="col-12 btn">Registrar</button>
 					</form>
-					
+
 				</div>
 			</div>
 		</div>
 
-		
+
 
 	</shiro:guest>
 
@@ -75,45 +93,52 @@
 			<div class="container-fluid">
 				<a class="navbar-brand" href="#"
 					style="color: #00adb5; letter-spacing: 3px">Gestión de viajes</a>
-					<div class="dropdown navbar-left">
-         		 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fas fa-bell"></i>
-
-         		 </a>
-          			<ul class="dropdown-menu notify-drop">
-           				 <div class="notify-drop-title">
-            				<div class="row">
-            					<span class="col-1"></span>
-            					<div class="col-6">Notificaciones</div>
-            				</div>
-            			</div>
-		            <div class="drop-content">
-		            <c:if test="${fn:length(notificaciones) == 0}">
-		            <li>
-		            		<p class="col-12">No hay notificaciones</p>
-		            	</li>
-		            </c:if>
-		            <c:forEach items="${notificaciones}" var="notificacioni">
-		            	<li>
-								<div class="col-12">
-								<div class="row">
-								<div class="col-9">
-									<i class="fa fa-dot-circle-o"></i><p><b>${notificacioni.subject}</b></p>
-								</div>
-								<div class="col-3">
-										<form action="NotificacionVistoServlet" method="post" class="col-3"'>
-										<input type="hidden" name="nNotificacion" value="${notificacioni.nNotificacion}" />
-										<button type="submit" class="btn"><i class="fas fa-times"></i></button>
-									</form>								
-								</div>	
-								</div>	            		
-		            		<hr>
-		            		<p class="col-12">${notificacioni.msg}</p>
-		            		</div>
-		            	</li>
-		            </c:forEach>
-		            </div>
-		          </ul>
-		        </div>
+				<div class="dropdown navbar-left">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown"
+						role="button" aria-haspopup="true" aria-expanded="false"><i
+						class="fas fa-bell"></i> </a>
+					<ul class="dropdown-menu notify-drop">
+						<div class="notify-drop-title">
+							<div class="row">
+								<span class="col-1"></span>
+								<div class="col-6">Notificaciones</div>
+							</div>
+						</div>
+						<div class="drop-content">
+							<c:if test="${fn:length(notificaciones) == 0}">
+								<li>
+									<p class="col-12">No hay notificaciones</p>
+								</li>
+							</c:if>
+							<c:forEach items="${notificaciones}" var="notificacioni">
+								<li>
+									<div class="col-12">
+										<div class="row">
+											<div class="col-9">
+												<i class="fa fa-dot-circle-o"></i>
+												<p>
+													<b>${notificacioni.subject}</b>
+												</p>
+											</div>
+											<div class="col-3">
+												<form action="NotificacionVistoServlet" method="post"
+													class="col-3"'>
+													<input type="hidden" name="nNotificacion"
+														value="${notificacioni.nNotificacion}" />
+													<button type="submit" class="btn">
+														<i class="fas fa-times"></i>
+													</button>
+												</form>
+											</div>
+										</div>
+										<hr>
+										<p class="col-12">${notificacioni.msg}</p>
+									</div>
+								</li>
+							</c:forEach>
+						</div>
+					</ul>
+				</div>
 				<button class="navbar-toggler" type="bottom" data-toggle="collapse"
 					data-target="#navbarResponsive">
 					<span class="navbar-toggler-icon"></span>
@@ -125,10 +150,10 @@
 					</ul>
 				</div>
 			</div>
-		</nav>		 
+		</nav>
 
 		<!--- Card Profile -->
-		<div class="contenedor" style="margin-top: 4%">
+		<div class="container" style="margin-top: 65px">
 			<div class="row border">
 				<div class="col-auto img">
 					<c:choose>
@@ -150,6 +175,7 @@
 					</c:choose>
 				</div>
 				<div class="col-auto details">
+					<br>
 					<blockquote>
 						<h5>${responsable.name}</h5>
 						<small><cite title="Source Title"> Responsable<i
@@ -163,7 +189,7 @@
 			</div>
 
 			<!-- List table -->
-			<div class="panel-body">
+			<div class="panel-body" style="padding-top: 10px;">
 				<table class="table table-striped table-bordered table-list">
 					<thead>
 						<tr>
@@ -171,6 +197,8 @@
 							<th>Empleado</th>
 							<th>Estado</th>
 							<th>Información sobre su viaje</th>
+							<th>Acción</th>
+							<th>Facturas</th>
 						</tr>
 					</thead>
 
@@ -179,62 +207,59 @@
 							<tr>
 								<td class="hidden-xs">${viajei.nViaje}</td>
 								<td>${viajei.viajero.name }</td>
-								<td><c:choose>								
-									<c:when test="${viajei.status == 1 }">Viaje solicitado</c:when>
-									<c:when test="${viajei.status == 2 }">Viaje aceptado</c:when>
-									<c:when test="${viajei.status == 3 }">Solicitando reintegro</c:when>
-									<c:when test="${viajei.status == 4 }">Reintegro aceptado por responsable</c:when>
-									<c:when test="${viajei.status == 5 }">Reintegro aceptado por OCG</c:when>								
-									<c:when test="${viajei.status == 6 }">Solicitando reembolso</c:when>
-									<c:when test="${viajei.status == 7 }">Reembolso aceptado</c:when>
-								</c:choose>
-								</td>
+								<td><c:choose>
+										<c:when test="${viajei.status == 1 }">Viaje solicitado</c:when>
+										<c:when test="${viajei.status == 2 }">Viaje aceptado</c:when>
+										<c:when test="${viajei.status == 3 }">Solicitando reintegro</c:when>
+										<c:when test="${viajei.status == 4 }">Reintegro aceptado por responsable</c:when>
+										<c:when test="${viajei.status == 5 }">Reintegro aceptado por OCG</c:when>
+										<c:when test="${viajei.status == 6 }">Solicitando reembolso</c:when>
+										<c:when test="${viajei.status == 7 }">Reembolso aceptado</c:when>
+									</c:choose></td>
 								<td>Fecha inicio: ${viajei.finicio } <br>Fecha fin:
 									${viajei.ffin } <br>Descripción: ${viajei.descripcion } <br>
 								</td>
-								<td><c:if test="${viajei.status == 1}">
+								<td class="align-middle" style="text-align: center;"><c:if test="${viajei.status == 1}">
 										<form action="FormEncargadoServlet" method="post">
 											<input type="hidden" name="nViaje" value="${viajei.nViaje}" />
-											<button type="submit">Aceptar viaje</button>
+											<button type="submit" class="btn btn-sm btn-primary btn-create">Aceptar viaje</button>
 										</form>
 										<form action="FormEncargadoServletDenegar" method="post">
-											<input type="hidden" name="nViaje" value="${viajei.nViaje}"/>
-											<input type="hidden" name="email" value="${viajei.viajero.superior.email}"/>
-											<button type="submit">Denegar viaje</button>
+											<input type="hidden" name="nViaje" value="${viajei.nViaje}" />
+											<input type="hidden" name="email"
+												value="${viajei.viajero.superior.email}" />
+											<button type="submit" class="btn btn-sm btn-danger">Denegar viaje</button>
 										</form>
-									</c:if></td>
-								<td><c:if test="${viajei.status == 3}">
+									</c:if> <c:if test="${viajei.status == 3}">
 										<form action="Form3ReintegroServlet" method="post">
 											<input type="hidden" name="nViaje" value="${viajei.nViaje}" />
-											<button type="submit">AceptarReintegro</button>
+											<button type="submit" class="btn btn-sm btn-primary btn-create">AceptarReintegro</button>
 										</form>
 										<form action="Form3ReintegroServletDenegar" method="post">
 											<input type="hidden" name="nViaje" value="${viajei.nViaje}" />
-											<button type="submit">Denegar Reintegro</button>
+											<button type="submit" class="btn btn-sm btn-danger">Denegar Reintegro</button>
+										</form>
+									</c:if> <c:if test="${viajei.status == 6}">
+										<form action="Form6ReembolsoServlet" method="post">
+											<input type="hidden" name="nViaje" value="${viajei.nViaje}" />
+											<button type="submit" class="btn btn-sm btn-primary btn-create">Aceptar Reembolso</button>
+										</form>
+										<form action="Form6ReembolsoServletDenegar" method="post">
+											<input type="hidden" name="nViaje" value="${viajei.nViaje}" />
+											<button type="submit" class="btn btn-sm btn-danger">Denegar Reembolso</button>
 										</form>
 									</c:if></td>
-								<td><c:if test="${viajei.status == 6}">
-									<form action="Form6ReembolsoServlet" method="post">
-										<input type="hidden" name="nViaje" value="${viajei.nViaje}" />
-										<button type="submit">Aceptar Reembolso</button>
-									</form>
-									<form action="Form6ReembolsoServletDenegar" method="post">
-										<input type="hidden" name="nViaje" value="${viajei.nViaje}" />
-										<button type="submit">Denegar Reembolso</button>
-									</form>
-								</c:if></td>
-								<td>
-								<c:choose>								
-									<c:when test="${viajei.facturas == null || viajei.facturas.isEmpty()}">No hay facturas</c:when>
-									<c:otherwise>
-										<form action="FacturasServlet" method="post">
-											<input type="hidden" name="nViaje" value="${viajei.nViaje}" />
-											<button type="submit">Ver facturas</button>
-										</form>
-									</c:otherwise>
-									</c:choose>
-								</td>
-								</tr>
+								<td class="align-middle" style="text-align: center;"><c:choose>
+										<c:when
+											test="${viajei.facturas == null || viajei.facturas.isEmpty()}">No hay facturas</c:when>
+										<c:otherwise>
+											<form action="FacturasServlet" method="post">
+												<input type="hidden" name="nViaje" value="${viajei.nViaje}" />
+												<button type="submit" class="btn btn-sm btn-primary btn-create">Ver facturas</button>
+											</form>
+										</c:otherwise>
+									</c:choose></td>
+							</tr>
 						</tbody>
 					</c:forEach>
 				</table>

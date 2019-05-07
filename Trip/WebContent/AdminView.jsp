@@ -16,19 +16,33 @@
 
 <!-- Custom fonts for this template -->
 <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-<link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
-<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+<link href="vendor/simple-line-icons/css/simple-line-icons.css"
+	rel="stylesheet" type="text/css">
+<link
+	href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic"
+	rel="stylesheet" type="text/css">
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+	integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+	integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+	crossorigin="anonymous"></script>
+<script
+	src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+	integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+	crossorigin="anonymous"></script>
 
 <link href="css/style.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>
-<shiro:lacksRole name="admin">
+	<shiro:lacksRole name="admin">
 		<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="#"
@@ -37,17 +51,16 @@
 					data-target="#navbarResponsive" action="LoginServlet">
 					<span class="navbar-toggler-icon"></span>
 				</button>
-				<div class="collapse navbar-collapse" id="navbarResponsive">
-					
-				</div>
+				<div class="collapse navbar-collapse" id="navbarResponsive"></div>
 			</div>
 		</nav>
-		
-		<h2 style="text-align:center; padding-top:100px;">No tienes permisos de administrador</h2>
-</shiro:lacksRole>
 
-<shiro:hasRole name="admin">
-    <!-- Navigation -->
+		<h2 style="text-align: center; padding-top: 100px;">No tienes
+			permisos de administrador</h2>
+	</shiro:lacksRole>
+
+	<shiro:hasRole name="admin">
+		<!-- Navigation -->
 		<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="#"
@@ -87,9 +100,12 @@
 
 							<c:forEach items="${empleado_list}" var="empl">
 								<tr>
-									<td style="text-align:center; vertical-align:middle;" scope="row">${empl.name }</td>
-									<td style="text-align:center; vertical-align:middle;" scope="row">${empl.email }</td>
-									<td style="text-align:center; vertical-align:middle;" scope="row"><c:choose>
+									<td style="text-align: center; vertical-align: middle;"
+										scope="row">${empl.name }</td>
+									<td style="text-align: center; vertical-align: middle;"
+										scope="row">${empl.email }</td>
+									<td style="text-align: center; vertical-align: middle;"
+										scope="row"><c:choose>
 											<c:when test="${empl.responsable=='true'}">
 										SI
     								</c:when>
@@ -97,12 +113,13 @@
         								NO
     								</c:otherwise>
 										</c:choose>
-									<td style="align:center;"  scope="row"><c:if test="${empl.responsable == false}">
-											<form action="SetResponsableServlet" method="post">
+									<td style="text-align: center;"><c:if
+											test="${empl.responsable == false}">
+											<form action="SetResponsableServlet" class="align-middle" method="post">
 												<input type="hidden" name="email" value="${empl.email}" />
-												<button class="btn btn-aceptar" 
-													 type="submit"><p class="ptext">Fijar
-													Responsable</p></button>
+												<button class="btn btn-aceptar" style="width: 10rem;" type="submit">
+													Fijar Responsable
+												</button>
 											</form>
 										</c:if></td>
 								</tr>
@@ -127,6 +144,7 @@
 							<th>Estado</th>
 							<th>Información sobre su viaje</th>
 							<th>Acción</th>
+							<th>Facturas</th>
 						</tr>
 					</thead>
 
@@ -134,37 +152,41 @@
 						<tbody>
 							<tr>
 								<c:if test="${viajei.status == 4 }">
-								<td class="hidden-xs">${viajei.nViaje}</td>
-								<td>${viajei.viajero.name }</td>
-								<td><c:choose>
-										<c:when test="${viajei.status == 1 }">Viaje solicitado</c:when>
-										<c:when test="${viajei.status == 2 }">Viaje aceptado</c:when>
-										<c:when test="${viajei.status == 3 }">Solicitando reintegro</c:when>
-										<c:when test="${viajei.status == 4 }">Reintegro aceptado por responsable</c:when>
-										<c:when test="${viajei.status == 5 }">Reintegro aceptado por OCG</c:when>
-										<c:when test="${viajei.status == 6 }">Solicitando reembolso</c:when>
-										<c:when test="${viajei.status == 7 }">Reembolso aceptado</c:when>
-									</c:choose></td>
-								<td>Fecha inicio: ${viajei.finicio } <br>Fecha fin:
-									${viajei.ffin } <br>Descripción: ${viajei.descripcion } <br>
-								</td>
-								<td>
-								<c:if test="${viajei.facturas.isEmpty() == false }">
-									<form action="FacturasServlet" method="post">
-										<input type="hidden" name="nViaje" value="${viajei.nViaje}" />
-										<button type="submit" class="btn btn-aceptar">Ver facturas</button>
-									</form>
-								</c:if>
-								<c:if test="${viajei.status == 4}">
-										<form action="Form4ReintegroServlet" method="post">
-											<input type="hidden" name="nViaje" value="${viajei.nViaje}" />
-											<button class="btn btn-aceptar" type="submit"><p class="ptext">Aceptar Reintegro</p></button>
-										</form>
-										<form action="Form4ReintegroServletDenegar" method="post">
-											<input type="hidden" name="nViaje" value="${viajei.nViaje}" />
-											<button class="btn btn-aceptar" type="submit"><p class="ptext">Denegar Reintegro</p></button>
-										</form>
-									</c:if></td>
+									<td class="hidden-xs">${viajei.nViaje}</td>
+									<td>${viajei.viajero.name }</td>
+									<td><c:choose>
+											<c:when test="${viajei.status == 1 }">Viaje solicitado</c:when>
+											<c:when test="${viajei.status == 2 }">Viaje aceptado</c:when>
+											<c:when test="${viajei.status == 3 }">Solicitando reintegro</c:when>
+											<c:when test="${viajei.status == 4 }">Reintegro aceptado por responsable</c:when>
+											<c:when test="${viajei.status == 5 }">Reintegro aceptado por OCG</c:when>
+											<c:when test="${viajei.status == 6 }">Solicitando reembolso</c:when>
+											<c:when test="${viajei.status == 7 }">Reembolso aceptado</c:when>
+										</c:choose></td>
+									<td>Fecha inicio: ${viajei.finicio } <br>Fecha fin:
+										${viajei.ffin } <br>Descripción: ${viajei.descripcion } <br>
+									</td>
+									<td class="align-middle"><c:if test="${viajei.status == 4}">
+											<form action="Form4ReintegroServlet" method="post">
+												<input type="hidden" name="nViaje" value="${viajei.nViaje}" />
+												<button class="btn btn-aceptar" type="submit" style="width: 10rem;">
+													Aceptar Reintegro
+												</button>
+											</form>
+											<form action="Form4ReintegroServletDenegar" method="post">
+												<input type="hidden" name="nViaje" value="${viajei.nViaje}" />
+												<button class="btn btn-danger" type="submit" style="width: 10rem;">
+													Denegar Reintegro
+												</button>
+											</form>
+										</c:if></td>
+									<td class="align-middle"><c:if test="${viajei.facturas.isEmpty() == false }">
+											<form action="FacturasServlet" method="post" >
+												<input type="hidden" name="nViaje" value="${viajei.nViaje}" />
+												<button type="submit" class="btn btn-aceptar" style="width: 8rem;">Ver
+													facturas</button>
+											</form>
+										</c:if></td>
 								</c:if>
 							</tr>
 						</tbody>

@@ -27,6 +27,6 @@ public class LoginErrorServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String msg = "Usuario o contraseña incorrecta";
 		req.setAttribute("msg", msg);
-		resp.sendRedirect( req.getContextPath() + "/LoginServlet" );
+		getServletContext().getRequestDispatcher( "/LoginView.jsp" ).forward( req, resp );
 	}
 }

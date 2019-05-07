@@ -168,21 +168,26 @@ body {
     color: #fff;
     width: auto;
 }
+
+.btn-create{
+    background-color: #00adb5;
+    border-color:#00adb5;  
+    color: #fff;
+    width: auto;
+}
 #card{
-	padding-top:10px;
-	
+	padding-top:10px;	
 }
 
 .foto{
 	height:200px;	
 	width:auto;	
 }
-@media  (max-width: 500px) {
+@media  (max-width: 736px) {
 	body{
 		font-size:12px;
 	}
-	
-	.ptext{
+	td{
 		font-size:12px;
 	}
 }
@@ -231,5 +236,8 @@ form {
 	color:#cccccc;
 }
 
+.details{
+	padding-left: 40px;
+}
 
 
